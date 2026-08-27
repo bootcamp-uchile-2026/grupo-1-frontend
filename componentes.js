@@ -17,17 +17,15 @@ async function init() {
 // evento para mostrar/ocultar el subnavbar al hacer click en Ayuda
 navAyuda.addEventListener('click', (evento) => {
     evento.preventDefault();
+    evento.stopPropagation();
     subnavbar.classList.toggle('activo');
 });
 
-//al pasar el mouse por encima de Ayuda, se muestra el subnavbar
-navDropdown.addEventListener('mouseenter', () => {
-    subnavbar.classList.add('activo');
-});
-
-//al quitar el mouse de Ayuda, se oculta el subnavbar
-navDropdown.addEventListener('mouseleave', () => {
-    subnavbar.classList.remove('activo');
+// al hacer click fuera del subnavbar, se cierra
+document.addEventListener('click', (evento) => {
+    if (!navDropdown.contains(evento.target)) {
+        subnavbar.classList.remove('activo');
+    }
 });
 }
 init();

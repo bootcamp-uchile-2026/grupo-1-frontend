@@ -18,6 +18,13 @@
 body {
     color: var(--text-color);
     background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-component {
+    margin-top: auto;
 }
 
 /* Imágenes (rectángulos con X) */
