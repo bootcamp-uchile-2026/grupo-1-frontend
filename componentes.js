@@ -13,19 +13,18 @@ async function init() {
     const navDropdown = document.querySelector('.nav-dropdown');
     const subnavbar = document.querySelector('.subnavbar');
 
+    // evento para mostrar/ocultar el subnavbar al hacer click en Ayuda
+    navAyuda.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        evento.stopPropagation();
+        subnavbar.classList.toggle('activo');
+    });
 
-// evento para mostrar/ocultar el subnavbar al hacer click en Ayuda
-navAyuda.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    evento.stopPropagation();
-    subnavbar.classList.toggle('activo');
-});
-
-// al hacer click fuera del subnavbar, se cierra
-document.addEventListener('click', (evento) => {
-    if (!navDropdown.contains(evento.target)) {
-        subnavbar.classList.remove('activo');
-    }
-});
+    // al hacer click fuera del subnavbar, se cierra
+    document.addEventListener('click', (evento) => {
+        if (!navDropdown.contains(evento.target)) {
+            subnavbar.classList.remove('activo');
+        }
+    });
 }
 init();
