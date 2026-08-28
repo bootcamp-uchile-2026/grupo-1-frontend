@@ -28,7 +28,7 @@ El desarrollo frontend se basa en la investigación y wireframes del equipo de U
 
 **Home** :Pantalla principal con banners de colección, secciones de inspiración y accesos a categorías. 
 
-**PDP** : Página de detalle del producto (variantes de talla/color, stock, guía de tallas y botón de compra). 
+**detalle-producto** : Página de detalle del producto (variantes de talla/color, stock, guía de tallas y botón de compra). 
 
 **Comunidad** : Galería inspiracional tipo *Lookbook* para ver prendas combinadas y aumentar la venta cruzada. 
 
