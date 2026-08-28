@@ -50,6 +50,11 @@ Arquitectura de Vistas (Navegación)
 
 El desarrollo frontend se basa en la investigación y wireframes del equipo de UX/UI. En este primer hito se construyeron las vistas HTML de baja fidelidad que son las  siguientes: 
 
+**Home** :Pantalla principal con banners de colección, secciones de inspiración y accesos a categorías. 
+
+**detalle-producto** : Página de detalle del producto (variantes de talla/color, stock, guía de tallas y botón de compra). 
+
+**Comunidad** : Galería inspiracional tipo *Lookbook* para ver prendas combinadas y aumentar la venta cruzada. 
 ```
  grupo-1-frontend/
   ├── .gitignore
