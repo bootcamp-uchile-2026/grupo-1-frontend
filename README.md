@@ -44,7 +44,13 @@ Cabe destacar que Frontend, Mobile y Backend poseen repositorios Git independien
 
 3.4 Feature: Se utilizan para implementar nuevas funcionalidades. Cada rama debe representar una funcionalidad concreta, preferentemente relacionada con una Historia de Usuario o tarea del Backlog. 
    Formato: feature/<HU>-<descripcion>
-
+## Instalación/Ejecución
+Para poder probar la aplicación web, es necesario:
+* Clonar este repositorio
+* Abrir en Visual Studio Code
+* Instalar la extensión Live Server de Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+* Dentro de la carpeta raíz del proeycto, hacer clic derecho en el archivo index.html y presionar "Abrir con Open Server Live"
+Y luego, en el navegador se abrirá la el archivo index.html correspondiente a la vista Home.
 ## Desarrollo: 
 Arquitectura de Vistas (Navegación)
 
