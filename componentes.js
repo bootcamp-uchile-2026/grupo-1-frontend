@@ -11,6 +11,14 @@ async function init() {
     await cargarHeaderFooter('footer.html', 'footer-component');
 
 
+    // marca como activo el link del nav que corresponde a la página actual
+    const paginaActual = location.pathname.split('/').pop();
+    document.querySelectorAll('nav a').forEach((link) => {
+        if (link.getAttribute('href') === paginaActual) {
+            link.classList.add('active');
+        }
+    });
+
     const navAyuda = document.querySelector('.nav-ayuda'); // botón/link "Ayuda" del navbar
     const navDropdown = document.querySelector('.nav-dropdown'); // contenedor del dropdown de Ayuda
     const subnavbar = document.querySelector('.subnavbar'); // menú desplegable que se muestra/oculta

@@ -84,6 +84,14 @@ nav a {
     color: var(--text-color);
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
 .subnavbar {
     display: none;
     position: absolute;
