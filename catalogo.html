@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/views/catalogo.css">
+</head>
+<body>
+    <div id="header-component"></div>
+    <main class="page-container">
+        <div class="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <a href="#">Mujer</a>
+                <span>/</span>
+                <span aria-current="page">Vestidos</span>
+            </nav>
+        </div>
+
+        <div class="catalogo-header">
+            <h1>Vestidos</h1>
+            <p>Encuentra el vestido perfecto para cada ocasión</p>
+        </div>
+
+        <div class="filtros-bar">
+            <button class="filtro-btn ordenar-btn">Filtros</button>
+            <button class="filtro-btn ">Talla</button>
+            <button class="filtro-btn filtro-btn--activo">Color</button>
+            <button class="filtro-btn">Precio</button>
+            <button class="filtro-btn">Ordenar por</button>
+        </div>
+
+        <div class="catalogo-content">
+            <aside class="filtros-sidebar">
+                <div class="filtro-grupo">
+                    <h3>Categoría</h3>
+                    <label><input type="checkbox"> Vestidos</label>
+                    <label><input type="checkbox"> Poleras</label>
+                    <label><input type="checkbox"> Pantalones</label>
+                    <label><input type="checkbox"> Faldas</label>
+                    <label><input type="checkbox"> Jeans</label>
+                    <label><input type="checkbox"> Blazer</label>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Tallas</h3>
+                    <label><input type="checkbox"> XS</label>
+                    <label><input type="checkbox"> S</label>
+                    <label><input type="checkbox"> M</label>
+                    <label><input type="checkbox"> L</label>
+                    <label><input type="checkbox"> XL</label>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Color</h3>
+                    <label><input type="checkbox"> Rojo</label>
+                    <label><input type="checkbox"> Rosa</label>
+                    <label><input type="checkbox"> Azul</label>
+                    <label><input type="checkbox"> Amarillo</label>
+                    <label><input type="checkbox"> Café</label>
+                    <label><input type="checkbox"> Negro</label>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Precio</h3>
+                    <input type="range" min="0" max="100000" class="precio-slider">
+                </div>
+            </aside>
+
+            <div class="catalogo-main">
+                <section class="product-list">
+                    
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                    
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                    <article class="product-item">
+                        <a href="detalle-producto.html">
+                            <div class="img-placeholder product-image"></div>
+                            <h2>Vestidos</h2>
+                            <span class="price">$29.990</span>
+                        </a>
+                    </article>
+                </section>
+
+                <nav class="pagination" aria-label="Paginación">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="#">10</a>
+                </nav>
+            </div>
+        </div>
+    </main>
+    <div id="footer-component"></div>
+    <script src="componentes.js"></script>
+</body>
+</html>
