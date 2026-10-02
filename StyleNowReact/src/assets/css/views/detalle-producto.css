@@ -1,0 +1,162 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    margin: 20px 0 50px 60px;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: ">";
+    margin-left: 5px;
+    color: var(--text-color);
+}
+
+/* Contenido Principal (Main) */
+.container {
+    display: flex;
+    max-width: 700px;
+    gap: 50px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+/* Galería de Imágenes */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-image {
+    width: 300px;
+    height: 520px;
+}
+
+.pics {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.minipics {
+    width: 60px;
+    height: 60px;
+}
+
+/* Información del Producto */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.texto {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.rating {
+    font-size: 15px;
+}
+
+/* Opciones de Color */
+.color {
+    margin-top: 40px;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--img-placeholder-border);
+    margin-bottom: 40px;
+}
+
+/* Opciones de Talla */
+.size-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.size-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--img-placeholder-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Botones */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 40px 0;
+}
+
+.btn {
+    padding: 12px;
+    border: 1px solid var(--img-placeholder-border);
+    background: transparent;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Información extra */
+.extra-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 13px;
+}
+
+.icon-box {
+    width: 30px;
+    height: 20px;
+    border: 1px solid var(--img-placeholder-border);
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}

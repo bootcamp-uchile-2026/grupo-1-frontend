@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* colores */
+:root {
+    --text-color: #413f3f;
+    --color-fondo: #fff;
+    --img-placeholder-border: #646363;
+    --background-header-footer-img: #f3efefee;
+    --border-header: #f7f2f2ee;
+    --navbar-color: #e0e0e0;
+    --scroll-color: #d0d0d0;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-component {
+    margin-top: auto;
+}
+
+/* Imágenes (rectángulos con X) */
+.img-placeholder {
+    border: 1px solid var(--scroll-color);
+    background:
+        linear-gradient(to top right, transparent calc(50% - 1px), var(--scroll-color), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right, transparent calc(50% - 1px), var(--scroll-color), transparent calc(50% + 1px));
+    background-color: var(--background-header-footer-img);
+}
+
+/* Línea placeholder de texto (usada en footer y en contenido de varias vistas) */
+.text {
+    height: 2px;
+    background-color: var(--scroll-color);
+}
+
+/* Contenedor general usado por varias vistas */
+.page-container {
+    padding: 0 70px;
+}
