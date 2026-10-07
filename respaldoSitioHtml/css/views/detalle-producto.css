@@ -26,13 +26,14 @@
 }
 
 /* Contenido Principal (Main) */
-.container {
+/*.container {
     display: flex;
     max-width: 700px;
     gap: 50px;
     margin-top: 50px;
     margin-left: 60px;
 }
+    */
 
 /* Galería de Imágenes */
 .gallery-container {

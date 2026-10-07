@@ -1,42 +1,52 @@
+import { NavLink } from "react-router";
+
+
 export function Header() {
     return (
         <>
             <header>
-                <div class-name="header-left">
-                    <a href="index.html">
-                        <div class-name="logo img-placeholder"></div>
-                    </a>
-                    <div class-name="menu">
+                <div className="header-left">
+                    <NavLink to="Inicio">
+                        <div className="header-logo img-placeholder"></div>
+                    </NavLink>
+                    <div className="menu">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
-                <div class-name="bar">
-                    <input type="text" placeholder=""/>
+                <div className="bar">
+                    <input type="text" placeholder="" />
                 </div>
-                <div class-name="header-right">
-                    <div class-name="sing">
+                <div className="header-right">
+                    <div className="sing">
                         <strong>Sing up</strong>
                         <strong>Sing in</strong>
                     </div>
-                    <a href="carrito.html">
-                        <i class-name="fa-solid fa-cart-shopping"></i>
-                    </a>
+                    <NavLink to="/carrito">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                    </NavLink>
                 </div>
             </header>
             <nav>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="#">Looks</a>
-                <a href="comunidad.html">Comunidad</a>
-                <div class-name="nav-dropdown">
-                    <a href="#" class-name="nav-ayuda">Ayuda</a>
-                    <div class-name="subnavbar">
-                        <a href="cambios-y-devoluciones.html">Cambios y devoluciones</a>
-                        <a href="#">Envíos</a>
-                        <a href="#">Preguntas Frecuentes</a>
-                        <a href="#">Contacto</a>
+                <NavLink to="/catalogo" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Catálogo
+                </NavLink>
+
+                <NavLink to="/looks" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Looks
+                </NavLink>
+
+                <NavLink to="/comunidad" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Comunidad</NavLink>
+
+                <div className="nav-dropdown mainMenu-link">
+                    <NavLink to="/ayuda" className={({ isActive }) => isActive ? 'active' : ''}>
+                        Ayuda
+                    </NavLink>
+                    <div className="subnavbar">
+                        <NavLink to="/cambios-y-devoluciones" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Cambios y devoluciones</NavLink>
+                        <NavLink to="/envios" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Envíos</NavLink>
+                        <NavLink to="/preguntas-frecuentes" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Preguntas Frecuentes</NavLink>
+                        <NavLink to="/contacto" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Contacto</NavLink>
                     </div>
                 </div>
             </nav>
