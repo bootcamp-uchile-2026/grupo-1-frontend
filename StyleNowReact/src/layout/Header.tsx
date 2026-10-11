@@ -1,6 +1,5 @@
 import { NavLink } from "react-router";
 
-
 export function Header() {
     return (
         <>
@@ -21,8 +20,12 @@ export function Header() {
                 </div>
                 <div className="header-right">
                     <div className="sing">
-                        <strong>Sing up</strong>
-                        <strong>Sing in</strong>
+                        <a className="feature-diseable" >
+                            <strong>Sign up</strong>
+                        </a>
+                        <NavLink className="loginMenu-link" to="/cuenta">
+                            <strong>Sign in</strong>
+                        </NavLink>
                     </div>
                     <NavLink to="/carrito">
                         <i className="fa-solid fa-cart-shopping"></i>

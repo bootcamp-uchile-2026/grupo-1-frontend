@@ -3,10 +3,10 @@ import '../assets/css/home.css'
 export function Inicio() {
     return (
         <>
-            <main>
+            <main id="home">
                 {/* Slider */}
                 <section id="slider-home">
-                    <div className="container">
+                    <div className="container home">
                         <div className="img-placeholder"></div>
 
                         <div className="slider-text">
@@ -20,7 +20,7 @@ export function Inicio() {
 
                 {/* Info Bar */}
                 <section id="highlights-bar">
-                    <div className="container">
+                    <div className="container home">
                         <div className="element">
                             <div className="img-placeholder"></div>
                             <div>

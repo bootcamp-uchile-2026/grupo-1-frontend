@@ -1,3 +1,6 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+
 /* Header Superior */
 header {
     display: flex;
@@ -15,8 +18,8 @@ header {
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 314px;
+    height: 92px;
 }
 
 .menu {
@@ -36,7 +39,7 @@ header {
 }
 
 .bar {
-    width: 800px;
+    width: 100%;
     margin: 0 40px;
 }
 
@@ -51,7 +54,7 @@ header {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 60px;
 }
 
 .sing {
@@ -61,6 +64,7 @@ header {
     text-align: left;
     gap: 5px;
     cursor: pointer;
+    min-width: 70px;
 }
 
 .fa-cart-shopping {
@@ -74,7 +78,7 @@ nav {
     background-color: var(--navbar-color);
     display: flex;
     justify-content: flex-end;
-    gap: 30px;
+    /*gap: 30px;*/
     font-size: 15px;
 }
 
@@ -92,18 +96,39 @@ nav a.active {
 }
 
 .header-logo {
-    width:100px; 
-    height:100px;
+    width:64px; 
+    height:64px;
+}
+
+
+.loginMenu-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.loginMenu-link:hover {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.loginMenu-link:visited {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 
 .mainMenu-link {
-    padding:30px;
+    padding:20px;
+}
+
+.mainMenu-link:hover {
+    text-decoration: none;
+    background-color: #c4c0c0;
 }
 
 .mainMenu-link.active {
-    text-decoration: underline;
-    background-color: #000;
+    text-decoration: none;
+    background-color: #c4c0c0;
 }
 
 
@@ -129,7 +154,7 @@ nav a.active {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #cbb3ac;
+    background-color: #c4c0c0;
     padding: 15px 70px;
     gap: 30px;
     box-sizing: border-box;
@@ -143,13 +168,12 @@ nav a.active {
 /* Footer */
 footer {
     background-color: var(--background-header-footer-img);
-    color: var(--text-color);
-    padding: 20px 40px;
+    color: var(--footer-text-color);
+    padding: 50px 40px 50px 99px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-top: 40px;
 }
 
 .footer-section {
@@ -161,6 +185,7 @@ footer {
 .footer-title {
     font-size: 18px;
     font-weight: normal;
+        text-align: left;
 }
 
 .rrss {
@@ -169,8 +194,8 @@ footer {
 }
 
 .rrss-box {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
 }
 
 .footer-text {
@@ -187,6 +212,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: baseline;
     font-size: 18px;
     color: var(--scroll-color);
 }

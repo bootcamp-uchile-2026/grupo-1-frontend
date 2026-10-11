@@ -1,5 +1,5 @@
 /* Contenido Principal (Main) */
-/*.container {
+main#carrito .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -10,7 +10,7 @@
     gap: 60px;
     box-sizing: border-box;
 }
-    */
+    
 
 /* Columna Izquierda */
 .gallery-container {
@@ -20,20 +20,20 @@
     flex: 1;
 }
 
-.product-item {
+main#carrito .product-item {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-.minipics {
+main#carrito .minipics {
     width: 140px;
     height: 140px;
     aspect-ratio: 1 / 1; /* Garantiza proporción 1:1 (cuadrado) */
     flex-shrink: 0;
 }
 
-.product-info {
+main#carrito .product-info {
     display: flex;
     flex-direction: column;
     gap: 11px;
@@ -60,7 +60,7 @@
     gap: 11px;
 }
 
-.btn {
+main#carrito .btn {
     padding: 12px;
     border: 2px solid var(--img-placeholder-border);
     background: transparent;

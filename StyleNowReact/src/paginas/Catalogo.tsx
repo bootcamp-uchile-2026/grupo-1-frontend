@@ -3,7 +3,8 @@ import '../assets/css/views/catalogo.css';
 export function Catalogo() {
     return (
         <>
-            <main className="page-container">
+            
+            <main id="catalogo" className="page-container">
                 <div className="breadcrumb">
                     <nav aria-label="breadcrumb">
                         <a href="index.html">Inicio</a>

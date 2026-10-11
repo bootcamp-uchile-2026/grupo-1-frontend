@@ -96,7 +96,7 @@
     gap: 30px;
 }
 
-.product-item {
+main#catalogo .product-item {
     width: calc((100% - 60px) / 3);
 }
 
@@ -127,4 +127,8 @@
 .pagination span {
     text-decoration: none;
     color: var(--text-color);
+}
+
+main#catalogo nav {
+        padding: 15px 40px;
 }

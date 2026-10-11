@@ -1,7 +1,8 @@
-
 import '../assets/css/views/comunidad.css';
 
+
 export function Comunidad() {
+
     return (
         <>
            <main className="page-container">

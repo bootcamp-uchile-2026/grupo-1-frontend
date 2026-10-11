@@ -3,12 +3,13 @@ import '../assets/css/views/carrito.css'
 export function Carrito() {
     return (
         <>
-            <main className="container">
-                <div className="gallery-container">
-                    <div className="product-item">
-                        <div className="minipics img-placeholder"></div>
-                        <div className="product-info">
-                            <span className="text"></span>
+            <main id="carrito">
+                <div className="container">
+                    <div className="gallery-container">
+                        <div className="product-item">
+                            <div className="minipics img-placeholder"></div>
+                            <div className="product-info">
+                                <span className="text"></span>
                             <span className="text"></span>
                             <span className="text"></span>
                             <span className="text"></span>
@@ -81,6 +82,7 @@ export function Carrito() {
                         <span className="text"></span>
                     </div>
                     <button className="btn">Continuar compra</button>
+                </div>
                 </div>
             </main>
         </>
