@@ -19,7 +19,7 @@ export function Header() {
                     <input type="text" placeholder="" />
                 </div>
                 <div className="header-right">
-                    <div className="sing">
+                    <div className="sing" >
                         <a className="feature-diseable" >
                             <strong>Sign up</strong>
                         </a>
