@@ -19,7 +19,7 @@ Cabe destacar que Frontend, Mobile y Backend poseen repositorios Git independien
 4. Ramas temporales de trabajo y componentes: feature/*, fix/*, docs/* y chore/*.
    La estructura general será:
    
-` main <-- release/hito-X <-- develop <-- feature/* <- fix/* docs/* chore/ `
+` main <-- develop <-- feature/* <- fix/* docs/* chore/ `
 
    Ramas y acuerdos:
    
@@ -32,98 +32,131 @@ Cabe destacar que Frontend, Mobile y Backend poseen repositorios Git independien
 			* Los cambios ingresan mediante Pull Request.
 			* Debe contener solamente código previamente integrado y probado.
 			* Cada entrega oficial debe quedar identificada mediante un tag.
-
-   3.2. Release: Representa la versión que será entregada para el hito en cuestión.
    
-   3.3.Develop: Representa la versión actual de integración dentro de cada repositorio.
+   3.2.Develop: Representa la versión actual de integración dentro de cada repositorio.
    Reglas:
 				* No se desarrolla directamente sobre develop.
 				* Todo cambio entra mediante Pull Request.
 				* Las nuevas ramas parten normalmente desde develop.
 				* Debe mantenerse ejecutable y razonablemente estable.
 
-3.4 Feature: Se utilizan para implementar nuevas funcionalidades. Cada rama debe representar una funcionalidad concreta, preferentemente relacionada con una Historia de Usuario o tarea del Backlog. 
+3.3 Feature: Se utilizan para implementar nuevas funcionalidades. Cada rama debe representar una funcionalidad concreta, preferentemente relacionada con una Historia de Usuario o tarea del Backlog. 
    Formato: feature/<HU>-<descripcion>
+   
 ## Instalación/Ejecución
 Para poder probar la aplicación web, es necesario:
 * Clonar este repositorio
 * Abrir en Visual Studio Code
-* Instalar la extensión Live Server de Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-* Dentro de la carpeta raíz del proeycto, hacer clic derecho en el archivo index.html y presionar "Abrir con Open Server Live"
-Y luego, en el navegador se abrirá la el archivo index.html correspondiente a la vista Home.
+* Abrir terminal WSL
+* Escribir `pnpm run dev`
+Y luego, en el navegador se abrirá el proyecto de manera local.
+
 ## Desarrollo: 
 Arquitectura de Vistas (Navegación)
 
 El desarrollo frontend se basa en la investigación y wireframes del equipo de UX/UI. En este primer hito se construyeron las vistas HTML de baja fidelidad que son las  siguientes: 
 
-**Home** :Pantalla principal con banners de colección, secciones de inspiración y accesos a categorías. 
+**Inicio** :Pantalla principal con banners de colección, secciones de inspiración y accesos a categorías. 
 
 **detalle-producto** : Página de detalle del producto (variantes de talla/color, stock, guía de tallas y botón de compra). 
 
 **Comunidad** : Galería inspiracional tipo *Lookbook* para ver prendas combinadas y aumentar la venta cruzada. 
-```
- grupo-1-frontend/
-  ├── .gitignore
-  ├── LICENSE
-  ├── README.md (archivo de documentación)
-  ├── index.html (vista Home)
-  ├── PDP.html (vista de Página de Detalle de Producto)
-  ├── carrito.html (vista de Carrito de compras)
-  ├── catalogo.html (vista de catálogo de productos)
-  ├── comunidad.html (vista de review de clientes)
-  ├── cambios-y-devoluciones.html (vista de cambios de productos)
-  ├── header.html (vista de header de la aplicación web)
-  ├── footer.html (vista de footer de la aplicación web)
-  ├── componentes.js (archivo javascript que llama al header y footer genérico para que carguen en todas las vistas y además permite el funcionamiento del subnavbar)
-  ├── assets/ (carpeta con imagénes)
-  │   └── img/
-  │       └── HeaderFooter.png
-  └── css/
-      ├── base.css (css que se repite en todas las vistas)
-      ├── header-footer.css (css genérico para header y footer)
-      └── views/ (css de cada vista en particular)
-          ├── home.css
-          ├── pdp.css
-          ├── carrito.css
-          ├── catalogo.css
-          ├── comunidad.css
-          └── cambios-y-devoluciones.css
-```
 
+**Producto** : Página base para la carga de productos. En este momento solo con contenido mock.
+
+**Login** :  Formulario para ingreso de usuarios bajo validación zod. 
+
+```
+grupo-1-frontend/
+├── css/
+├── node_modules/
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── src/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── views/
+│   │   │   ├── base.css
+│   │   │   ├── header-footer.css
+│   │   │   └── home.css
+│   │   ├── img/
+│   │   ├── react.svg
+│   │   ├── users.json
+│   │   └── vite.svg
+│   ├── layout/
+│   │   ├── Body.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── MainLayout.tsx
+│   │   └── Sidebar.tsx
+│   ├── pages/
+│   │   ├── subcomponents/
+│   │   │   ├── CategoriasPopulares.tsx
+│   │   │   ├── HomeInfoBar.tsx
+│   │   │   └── ProductsForYou.tsx
+│   │   ├── Cambios_y_Devoluciones.tsx
+│   │   ├── Carrito.tsx
+│   │   ├── Catalogo.tsx
+│   │   ├── Comunidad.tsx
+│   │   ├── Inicio.tsx
+│   │   ├── Login.tsx
+│   │   ├── ohoh.tsx
+│   │   └── Producto.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── test.tsx
+├── vanillaHtml/
+├── .gitignore
+├── .oxlintrc.json
+├── index.html
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+```
 
 ## Componentes reutilizables: 
-En este hito, el equipo front hizo un primer acercamiento a la identificación e implementación de "componentes reutilizables" en las diferentes vistas, acordando que los componentes son:
+En el hito número 2, se ha transformado el proyecto a React, permitiendo reutilizar virtualmente cualquiera de los componentes que forman el sitio. Los elementos que buscan ser reutilizados están bajo la sub carpeta "subcomponents"
 
-* **Header Genérico :** Incluye la barra de navegación principal, buscador y acceso rápido al carrito.
-* **Footer Genérico :** Contiene enlace de la tienda, redes sociales y ayuda.
-![Vista previa de header y footer ](assets/img/HeaderFooter.png)
+* **CategoriasPopulares :** Componente que carga la imagen y el título de la categoría desde una api rest. Pide como propm un id.
+* **HomeInfoBar :** Carga mensajes destacados en el home. Solicita un promp para el encabezado y otro para el paragraph de contenido.
+* **ProductsForYou :** Carga una imagen a un producto destacado en base al tipo de usuario que visita el sitio.
 
- Cabe destacar que ambos componentes son llamados de forma dinámica desde sus respectivos archivos hacia las distintas vistas HTML para evitar la duplicación de código en la maquetación.
+Cabe destacar que ambos componentes son llamados de forma dinámica desde sus respectivos archivos hacia las distintas vistas HTML para evitar la duplicación de código en la maquetación.
 
 ## Tecnologías Utilizadas en el proceso:
 * **HTML5:** Estructura semántica de las vistas.
 * **CSS3:** Estilos visuales.
-* **JS:** Llama a los componentes del sitio en las distintas vistas.
+* **Pnpm/npm: ** Librería de componentes
+* **Vite:** Empaquetador de proyecto
+* **TS:** Llama a los componentes del sitio en las distintas vistas.
 * **Figma:** Wireframes y prototipos UX/UI de referencia.
 * **Git/GitHub:** Control de versiones y trabajo colaborativo.
 
-
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR (reemplazo de módulos en caliente) y algunas reglas de Oxlint.
 
-Currently, two official plugins are available:
+Actualmente, hay dos complementos (plugins) oficiales disponibles:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Compilador de React (React Compiler)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El compilador de React no está habilitado en esta plantilla debido a su impacto en el rendimiento de desarrollo y compilación. Para agregarlo, consulta esta documentación [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the Oxlint configuration
+## Ampliando la configuración de Oxlint
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Si estás desarrollando una aplicación de producción, recomendamos habilitar las reglas de linter conscientes de tipos instalando `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
 ```json
 {
@@ -139,4 +172,10 @@ If you are developing a production application, we recommend enabling type-aware
 }
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Consulta la [documentación de reglas de Oxlint](https://oxc.rs/docs/guide/usage/linter/rules) para ver la lista completa de reglas y categorías.
+
+## Cargar el proyecto
+
+Para ver el proyecto, descarga 
+
+
