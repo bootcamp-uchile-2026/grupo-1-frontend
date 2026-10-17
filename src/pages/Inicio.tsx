@@ -40,14 +40,15 @@ export function Inicio() {
                     <h2>Categoría populares</h2>
 
                     <div className="container">
-                        <CategoriasPopulares categoryName="Mujer" />
 
-                        <CategoriasPopulares categoryName="Hombre" />
+                        <CategoriasPopulares id="1" />
 
-                        <CategoriasPopulares categoryName="Accesorios" />
+                        <CategoriasPopulares id="2" />
 
-                        <CategoriasPopulares categoryName="Ofertas" />
+                        <CategoriasPopulares id="3" />
+
                     </div>
+
                 </section>
 
                 {/* For you */}
@@ -57,7 +58,9 @@ export function Inicio() {
                     <div className="container">
 
                         <ProductForyou />
+
                         <ProductForyou />
+                        
                         <ProductForyou />
 
                     </div>

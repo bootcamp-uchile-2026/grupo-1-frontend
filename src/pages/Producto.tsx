@@ -7,7 +7,7 @@ export function Producto() {
                 <div aria-label="breadcrumbs">
                     <ul>
                         <li>
-                            <a href="catalogo.html">Mujer</a>
+                            <a href="#">Mujer</a>
                         </li>
                         <li>
                             <a href="#">Vestidos</a>

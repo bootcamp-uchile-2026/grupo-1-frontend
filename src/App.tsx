@@ -5,7 +5,7 @@ import { Carrito } from './pages/Carrito'
 import { Catalogo } from './pages/Catalogo'
 import { Comunidad } from './pages/Comunidad'
 import { Cambios_y_Devoluciones } from './pages/Cambios_y_Devoluciones'
-import { Cuenta } from './pages/Cuenta'
+import { Login } from './pages/Login'
 import { Producto } from './pages/Producto' 
 import { NotFound } from './pages/ohoh'
 import '/src/assets/css/base.css'
@@ -22,7 +22,7 @@ export function App() {
           <Route path="inicio" element={<Inicio />} />
           <Route path="carrito" element={<Carrito />} />
           <Route path="catalogo" element={<Catalogo />} />
-          <Route path="cuenta" element={<Cuenta />} />
+          <Route path="login" element={<Login />} />
           <Route path="cambios_y_devoluciones" element={<Cambios_y_Devoluciones />} />
           <Route path="comunidad" element={<Comunidad />} />
           <Route path="producto" element={<Producto />} />

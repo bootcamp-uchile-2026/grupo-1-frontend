@@ -8,7 +8,7 @@ export function Header() {
                     <NavLink to="Inicio">
                         <div className="header-logo img-placeholder"></div>
                     </NavLink>
-                    <div className="menu">
+                    <div className="menu no-action">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -16,14 +16,14 @@ export function Header() {
                     </div>
                 </div>
                 <div className="bar">
-                    <input type="text" placeholder="" />
+                    <input type="text" placeholder="" disabled/>
                 </div>
                 <div className="header-right">
                     <div className="sing" >
                         <a className="feature-diseable" >
                             <strong>Sign up</strong>
                         </a>
-                        <NavLink className="loginMenu-link" to="/cuenta">
+                        <NavLink className="loginMenu-link" to="/login">
                             <strong>Sign in</strong>
                         </NavLink>
                     </div>
@@ -36,12 +36,12 @@ export function Header() {
                 <NavLink to="/catalogo" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Catálogo
                 </NavLink>
 
-                <NavLink to="/looks" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Looks
-                </NavLink>
+                {/*<NavLink to="/looks" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Looks
+                </NavLink>*/}
 
                 <NavLink to="/comunidad" className={({ isActive }) => isActive ? 'mainMenu-link active' : 'mainMenu-link'}>Comunidad</NavLink>
 
-                <div className="nav-dropdown mainMenu-link">
+                <div className="nav-dropdown mainMenu-link d-none">
                     <NavLink to="/ayuda" className={({ isActive }) => isActive ? 'active' : ''}>
                         Ayuda
                     </NavLink>
