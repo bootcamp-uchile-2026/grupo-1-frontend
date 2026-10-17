@@ -7,7 +7,7 @@ export function Carrito() {
                 <div className="container">
                     <div className="gallery-container">
                         <div className="product-item">
-                            <div className="minipics img-placeholder"></div>
+                            <a href="/producto" ><div className="minipics img-placeholder"></div></a>
                             <div className="product-info">
                                 <span className="text"></span>
                             <span className="text"></span>
@@ -22,7 +22,7 @@ export function Carrito() {
                         </div>
                     </div>
                     <div className="product-item">
-                        <div className="minipics img-placeholder"></div>
+                       <a href="/producto" ><div className="minipics img-placeholder"></div></a>
                         <div className="product-info">
                             <span className="text"></span>
                             <span className="text"></span>
@@ -37,7 +37,7 @@ export function Carrito() {
                         </div>
                     </div>
                     <div className="product-item">
-                        <div className="minipics img-placeholder"></div>
+                       <a href="/producto" ><div className="minipics img-placeholder"></div></a>
                         <div className="product-info">
                             <span className="text"></span>
                             <span className="text"></span>
@@ -52,7 +52,7 @@ export function Carrito() {
                         </div>
                     </div>
                     <div className="product-item">
-                        <div className="minipics img-placeholder"></div>
+                       <a href="/producto" ><div className="minipics img-placeholder"></div></a>
                         <div className="product-info">
                             <span className="text"></span>
                             <span className="text"></span>

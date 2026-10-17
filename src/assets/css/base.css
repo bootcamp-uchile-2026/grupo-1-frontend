@@ -66,3 +66,11 @@ main#notFound {
     text-align: center;
     padding: 10vh 0;
 }
+
+.no-action {
+    cursor: not-allowed!important;
+}
+
+.d-none {
+    display: none;
+}

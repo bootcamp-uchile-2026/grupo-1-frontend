@@ -7,11 +7,9 @@ export function Catalogo() {
             <main id="catalogo" className="page-container">
                 <div className="breadcrumb">
                     <nav aria-label="breadcrumb">
-                        <a href="index.html">Inicio</a>
+                        <a href="/">Inicio</a>
                         <span>/</span>
-                        <a href="#">Mujer</a>
-                        <span>/</span>
-                        <span aria-current="page">Vestidos</span>
+                        <span aria-current="page">Catalogo</span>
                     </nav>
                 </div>
 
@@ -69,7 +67,7 @@ export function Catalogo() {
                         <section className="product-list">
 
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
@@ -77,35 +75,35 @@ export function Catalogo() {
                             </article>
 
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
                                 </a>
                             </article>
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
                                 </a>
                             </article>
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
                                 </a>
                             </article>
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
                                 </a>
                             </article>
                             <article className="product-item">
-                                <a href="detalle-producto.html">
+                                <a href="#">
                                     <div className="img-placeholder product-image"></div>
                                     <h2>Vestidos</h2>
                                     <span className="price">$29.990</span>
