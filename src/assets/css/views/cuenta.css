@@ -1,0 +1,81 @@
+main#cuenta {
+    background-color: #fafafa;
+}
+
+main#cuenta .container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    gap: 50px;
+    padding:10vh 0;
+}
+
+main#cuenta .section {
+    margin: 50px auto;
+}
+
+
+main#cuenta .card {
+    max-width: 550px;
+    min-height: 500px;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(57, 57, 58, 0.5);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+main#cuenta h2 {
+    display: flex;
+    justify-content: center;
+}
+main#cuenta p {
+    font-size: 10px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+main#cuenta p.mensaje-error {
+    font-size: 12px;
+    padding: 10px 0;
+    color:var(--color-alerta);
+}
+
+
+main#cuenta .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+main#cuenta label {
+    font-size: 15px;
+}
+main#cuenta input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--navbar-color);
+    font-size: 15px;
+}
+main#cuenta .btn {
+    padding: 12px;
+    color: var(--color-fondo);
+    background-color: var(--black-color);
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    cursor: pointer;
+    text-align: center;
+}
+main#cuenta a {
+    color: var(--text-color);
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+}
