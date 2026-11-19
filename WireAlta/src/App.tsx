@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router'
 import { MainLayout } from './layout/MainLayout'
 import { Inicio } from './pages/Inicio'
-import { Listado } from './pages/Listados_v2'
+import { Listado } from './pages/Listados'
+import { Producto } from './pages/Producto'
 import {NoEncontrado}  from './pages/NoEncontrado'
 
 
@@ -17,6 +18,7 @@ export function App() {
           <Route path="/listados/Accesorios" element={<Listado categoria='Accesorios' />} />
           <Route path="/listados/Calzados" element={<Listado categoria='Calzados' />} />
           <Route path="/listados/Ofertas" element={<Listado categoria='Ofertas' />} />
+          <Route path="/listados/:categoria/:id" element={<Producto />} />
           <Route path="*" element={<NoEncontrado />} />
         </Route>
       </Routes>

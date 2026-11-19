@@ -1,6 +1,7 @@
 import { type CSSProperties } from 'react'
 import { useFetchCatalogo } from '../components/FetchCatalogo'
-  
+import { Link } from 'react-router'
+
 import '../assets/css/views/listado.css'
 
 const formatearPrecio = (precio: number) =>
@@ -10,7 +11,7 @@ type CategoriaBuscadaProp = {
   categoria: string
 }
 
-export function Listado( {categoria}: CategoriaBuscadaProp ) {
+export function Listado({ categoria }: CategoriaBuscadaProp) {
 
   const { cargando, productos } = useFetchCatalogo()
 
@@ -116,12 +117,14 @@ export function Listado( {categoria}: CategoriaBuscadaProp ) {
                   <article className="product-card">
                     <div className="product-card__media">
                       {producto.imagenUrl?.[0] ? (
+                        <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
                         <img
                           className="ratio-product"
                           src={producto.imagenUrl[0]}
                           alt={`${producto.nombre}, foto de producto`}
                           loading="lazy"
                         />
+                        </Link>
                       ) : (
                         <div className="ph ph--menta ratio-product" role="img" aria-label={`${producto.nombre}, foto de producto`} data-label={`${producto.nombre}, foto de producto`}>
                           <svg className="icon icon--32" aria-hidden="true">
@@ -136,7 +139,10 @@ export function Listado( {categoria}: CategoriaBuscadaProp ) {
                       </button>
                     </div>
                     <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
-                      <a className="product-card__name" href={`#/producto/${producto.id}`}>{producto.nombre}</a>
+                      {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
+                      <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
+                        {producto.nombre}
+                      </Link>
                       <p className="price">
                         <span className="price__now">{formatearPrecio(producto.precio)}</span>
                       </p>
