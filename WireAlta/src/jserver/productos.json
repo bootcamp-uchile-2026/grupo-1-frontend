@@ -1,6 +1,15 @@
 {
   "productos": [
     {
+      "id": 1,
+      "nombre": "Vestido de lino blanco",
+      "precio": 39990,
+      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "mujer",
+      "novedad": true,
+      "oferta": false
+    },
+    {
       "id": 2,
       "nombre": "Camisa oxford celeste",
       "precio": 29990,
@@ -16,16 +25,70 @@
       "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "accesorios",
       "novedad": false,
-      "oferta": true
+      "oferta": false
     },
     {
       "id": 4,
-      "nombre": "Chancho",
-      "precio": 24990,
-      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "nombre": "Abrigo Violeta",
+      "precio": 59990,
+      "imagenUrl": ["mujer-abrigo-violeta-pantalon-verde.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "mujer",
+      "novedad": false,
+      "oferta": false
+    },
+    {
+      "id": 5,
+      "nombre": "Short Violeta",
+      "precio": 59990,
+      "imagenUrl": ["mujer-abrigo-verde-short-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "mujer",
+      "novedad": false,
+      "oferta": false
+    },
+    {
+      "id": 6,
+      "nombre": "Traje Verde",
+      "precio": 59990,
+      "imagenUrl": ["mujer-traje-verde-cartera-lila.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "mujer",
+      "novedad": false,
+      "oferta": false
+    },
+    {
+      "id": 7,
+      "nombre": "Hombre Traje Verde",
+      "precio": 59990,
+      "imagenUrl": ["hombre-traje-verde-camisa-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "hombre",
+      "novedad": false,
+      "oferta": false
+    },
+    {
+      "id": 8,
+      "nombre": "Cartera Lila",
+      "precio": 90990,
+      "imagenUrl": ["mujer-traje-verde-cartera-lila.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "accesorios",
       "novedad": false,
-      "oferta": true
+      "oferta": false
+    },
+    {
+      "id": 9,
+      "nombre": "Sobretodo Violeta",
+      "precio": 120000,
+      "imagenUrl": ["hombre-traje-verde-abrigo-violeta-al-brazo.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "hombre",
+      "novedad": false,
+      "oferta": false
+    },
+    {
+      "id": 10,
+      "nombre": "Hombre Abrigo",
+      "precio": 25000,
+      "imagenUrl": ["hombre-abrigo-verde-bufanda-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "hombre",
+      "novedad": false,
+      "oferta": false
     }
   ],
   "pagina": 1,

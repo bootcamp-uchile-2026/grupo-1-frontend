@@ -14,17 +14,16 @@ export function NoEncontrado() {
           <h2 className="h5">No encontramos esta página</h2>
           <p>Puede que el enlace haya cambiado o ya no exista. Prueba buscando o vuelve al inicio.</p>
           <div className="row gap-sm wrap" style={{ justifyContent: 'center' }}>
-            <a className="btn btn--primary" href="#/">Volver al inicio</a>
-            <a className="btn btn--secondary" href="#/ayuda-cambios">Ir a la ayuda</a>
+            <a className="btn btn--primary" href="/">Volver al inicio</a>
+            <a className="btn btn--secondary" href="/ayudaCambios">Ir a la ayuda</a>
           </div>
         </div>
         <h2 className="h5">Busca por categoría</h2>
         <div className="chips">
-          <a className="chip" href="#/listado">Vestidos</a>
-          <a className="chip" href="#/listado">Blusas</a>
-          <a className="chip" href="#/listado">Pantalones</a>
-          <a className="chip" href="#/listado">Chaquetas</a>
-          <a className="chip" href="#/listado">Ofertas</a>
+          <a className="chip" href="/listado/Mujer">Mujer</a>
+          <a className="chip" href="/listado/Hombre">Hombre</a>
+          <a className="chip" href="/listado/Accesorios">Accesorios</a>
+          <a className="chip" href="/listado/Calzados">Calzados</a>
         </div>
         <h2 className="h5">Te podría gustar</h2>
         <ul className="grid grid-4">
@@ -88,11 +87,11 @@ export function NoEncontrado() {
                     <use href="#i-nopic" />
                   </svg>
                 </div>
-                <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label="Agregar Vestido Satén a favoritos">
+                {/*<button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label="Agregar Vestido Satén a favoritos">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-heart" />
                   </svg>
-                </button>
+                </button>*/}
               </div>
               <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
                 <a className="product-card__name" href="#/producto">Vestido Satén</a>

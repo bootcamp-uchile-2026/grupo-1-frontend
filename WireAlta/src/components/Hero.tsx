@@ -23,6 +23,10 @@ import mujerAbrigoVioletaPantalonVerde from '../assets/img/sliders/mujer-abrigo-
 import mujerTrajeVerdeCarteraLila from '../assets/img/sliders/mujer-traje-verde-cartera-lila.webp';
 import personaTrajeVerdeCamisaLavanda from '../assets/img/sliders/persona-traje-verde-camisa-lavanda.webp';
 
+// At the top of Hero.tsx:
+import { useNavigate } from 'react-router';
+
+
 /* ---------- Tipos ---------- */
 
 export interface HeroImagen {
@@ -112,9 +116,9 @@ export const HERO_DATA: HeroData = {
           { src: personaTrajeVerdeCamisaLavanda, alt: 'Persona con traje verde y camisa lavanda', x: 860, y: 120, w: 426, h: 640 },
         ],
         prendas: [
-          { nombre: 'Abrigo Violeta', precio: '$59.990', url: '/producto/abrigo-violeta', x: 443.04, y: 361.8 },
-          { nombre: 'Short Violeta', precio: null, url: '/producto/short-violeta', x: 881.51, y: 505 },
-          { nombre: 'Traje Verde', precio: '$89.990', url: '/producto/traje-verde', x: 991.36, y: 430.8 },
+          { nombre: 'Abrigo Violeta', precio: '$59.990', url: 'listados/mujer/4', x: 443.04, y: 361.8 },
+          { nombre: 'Short Violeta', precio: null, url: 'listados/mujer/5', x: 881.51, y: 505 },
+          { nombre: 'Traje Verde', precio: '$89.990', url: 'listados/mujer/6', x: 991.36, y: 430.8 },
         ],
       },
       mobile: {
@@ -123,8 +127,8 @@ export const HERO_DATA: HeroData = {
           { src: personaTrajeVerdeCamisaLavanda, alt: 'Persona con traje verde y camisa lavanda', x: -2, y: 110, w: 399, h: 600 },
         ],
         prendas: [
-          { nombre: 'Traje Verde', precio: '$89.990', url: '/producto/traje-verde', x: 119.64, y: 383 },
-          { nombre: 'Camisa Lavanda', precio: null, url: '/producto/camisa-lavanda', x: 183.48, y: 232 },
+          { nombre: 'Traje Verde', precio: '$89.990', url: 'listados/mujer/6', x: 119.64, y: 383 },
+          { nombre: 'Camisa Lavanda', precio: null, url: 'listados/mujer/5', x: 183.48, y: 232 },
         ],
       },
     },
@@ -139,9 +143,9 @@ export const HERO_DATA: HeroData = {
           { src: mujerAbrigoVerdeShortVioleta, alt: 'Mujer con abrigo verde y short violeta', x: 490, y: 19, w: 519, h: 778 },
         ],
         prendas: [
-          { nombre: 'Abrigo Verde', precio: '$64.990', url: '/producto/abrigo-verde', x: 653.37, y: 379 },
-          { nombre: 'Camisa Violeta', precio: null, url: '/producto/camisa-violeta', x: 497.61, y: 276 },
-          { nombre: 'Cartera Lila', precio: null, url: '/producto/cartera-lila', x: 945.01, y: 468.2 },
+          { nombre: 'Abrigo Violeta', precio: '$59.990', url: 'listados/mujer/4', x: 653.37, y: 379 },
+          { nombre: 'Hombre Traje Verde', precio: '$59.990', url: 'listados/hombre/7', x: 497.61, y: 276 },
+          { nombre: 'Cartera Lila', precio: '$90.990', url: 'listados/accesorios/8', x: 945.01, y: 468.2 },
         ],
       },
       mobile: {
@@ -167,9 +171,9 @@ export const HERO_DATA: HeroData = {
           { src: mujerAbrigoVioletaPantalonVerde, alt: 'Mujer con abrigo violeta y pantalón verde', x: 434, y: 132, w: 502, h: 628 },
         ],
         prendas: [
-          { nombre: 'Abrigo Violeta', precio: '$59.990', url: '/producto/abrigo-violeta', x: 666.29, y: 349 },
-          { nombre: 'Sobretodo Violeta', precio: null, url: '/producto/sobretodo-violeta', x: 404.57, y: 539 },
-          { nombre: 'Bufanda Violeta', precio: null, url: '/producto/bufanda-violeta', x: 917.39, y: 303.6 },
+          { nombre: 'Abrigo Violeta', precio: '$59.990', url: 'listados/mujer/4', x: 653.37, y: 379 },
+          { nombre: 'Sobretodo Violeta', precio: '$120.000', url: 'listados/hombre/9', x: 404.57, y: 539 },
+          { nombre: 'Hombre Abrigo', precio: '$25000', url: 'listados/hombre/10', x: 917.39, y: 303.6 },
         ],
       },
       mobile: {
@@ -191,6 +195,8 @@ export const HERO_DATA: HeroData = {
    Componente
    ========================================================= */
 export function Hero({ data = HERO_DATA }: HeroProps) {
+
+  const navigate = useNavigate();
   const looks = data.looks;
   const total = looks.length;
   const uid = 'sn' + useId().replace(/[^a-zA-Z0-9_-]/g, '');
@@ -471,16 +477,22 @@ export function Hero({ data = HERO_DATA }: HeroProps) {
             onFocus={onHsFocus(key)}
             onBlur={onHsBlur(key)}
           >
+
             <button
               type="button"
               className="sn-hotspot__btn"
               aria-expanded={isOpen}
               aria-controls={tipId}
               aria-label={`Prenda ${n}: ${p.nombre}`}
-              onClick={() => toggleHotspot(key)}
+              onClick={() => {
+                if (p.url && p.url !== '#') {
+                  navigate(p.url);
+                }
+              }}
             >
               {n}
             </button>
+
             <a id={tipId} className="sn-hotspot__tip" href={p.url || '#'}>
               <span className="sn-hotspot__name">{p.nombre}</span>
               {p.precio ? <span className="sn-hotspot__price">{p.precio}</span> : null}
@@ -550,12 +562,12 @@ export function Hero({ data = HERO_DATA }: HeroProps) {
             Descubre lo nuevo en ropa y accesorios. Toca cada prenda para verla en detalle.
           </span>
         </p>
-        <a className="sn-btn sn-btn--highlight" href="/coleccion/otono-26">
+       {/* <a className="sn-btn sn-btn--highlight" href="/coleccion/otono-26">
           Comprar la colección
         </a>
         <a className="sn-hero__link" href={activeLook.url || '#'}>
           Ver las prendas del look
-        </a>
+        </a> */}
       </div>
 
       <div className="sn-hero__pager">
@@ -587,4 +599,3 @@ export function Hero({ data = HERO_DATA }: HeroProps) {
   );
 }
 
-export default Hero;

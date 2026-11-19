@@ -81,7 +81,7 @@ function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
         <nav className="crumbs" aria-label="Migas de pan">
           <ol>
             <li>
-              <Link to={`/listados/${encodeURIComponent(categoria)}`}>{categoria}</Link>
+              <Link to={`/listados/${encodeURIComponent(categoria)}`}> {categoria}.charAt(0).toUpperCase() + {categoria}.slice(1)</Link>
             </li>
             {producto && (
               <li>

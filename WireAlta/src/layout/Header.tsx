@@ -54,12 +54,7 @@ export function Header() {
           <label className="sr-only" htmlFor="q">
             Buscar
           </label>
-          <input
-            id="q"
-            type="search"
-            name="q"
-            placeholder="Buscar productos, marcas y más"
-          />
+          <input id="q" type="search" name="q" placeholder="Buscar productos, marcas y más" disabled/>
         </form>
         <a className="icon-btn" href="/carrito" aria-label="Carrito">
           <svg className="icon" aria-hidden="true">
@@ -86,9 +81,6 @@ export function Header() {
         </NavLink>
         <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Calzados" >
           Calzados
-        </NavLink>
-        <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Ofertas" >
-          Ofertas
         </NavLink>
       </nav>
 

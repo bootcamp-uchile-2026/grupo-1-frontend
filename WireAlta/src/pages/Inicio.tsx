@@ -221,7 +221,7 @@ export function Inicio() {
           </ul>
         </div>
       </section>
-      <section className="section inspo" aria-labelledby="ins-t">
+      {/*<section className="section inspo" aria-labelledby="ins-t">
         <div className="container">
           <div className="section-head">
             <div>
@@ -230,8 +230,6 @@ export function Inicio() {
               <p>Looks completos armados por nuestro equipo. Ábrelos para ver cada prenda.</p>
             </div>
             <div className="row gap-sm">
-              {/*<a className="link" href="#/looks">Ver todos los looks</a>*/}
-              
             </div>
           </div>
           <ul className="inspo__track">
@@ -469,7 +467,7 @@ export function Inicio() {
             </li>
           </ul>
         </div>
-      </section>
+      </section>*/}
     </>
   )
 }
