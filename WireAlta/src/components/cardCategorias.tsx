@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { type Productos } from '../Types'
 
 type Categorias = {
     id: number,
@@ -8,15 +9,6 @@ type Categorias = {
     destacada: boolean
 }
 
-type Productos = {
-    id: number,
-    nombre: string,
-    precio: number,
-    imagenUrl: string[],
-    categoria: string,
-    novedad: boolean,
-    oferta: boolean
-}
 
 export function CardCategorias() {
 

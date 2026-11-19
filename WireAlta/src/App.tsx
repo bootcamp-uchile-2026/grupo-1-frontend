@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 import { MainLayout } from './layout/MainLayout'
 import { Inicio } from './pages/Inicio'
-import { Listado } from './pages/Listados'
+import { Listado } from './pages/Listados_v2'
 import {NoEncontrado}  from './pages/NoEncontrado'
 
 

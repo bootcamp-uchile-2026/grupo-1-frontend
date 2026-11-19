@@ -1,5 +1,6 @@
 import '../assets/css/home.css'
-import { CardCategorias } from '../components/cardCategorias'
+/*import { CardCategorias } from '../components/cardCategorias'*/
+import { CategoriasHome } from '../components/CategoriasHome'
 import { Hero }  from '../components/Hero'
 
 export function Inicio() {
@@ -120,7 +121,8 @@ export function Inicio() {
             <a className="link" href="#/listado">Ver todas las categorías</a>
           </div>
           <ul className="grid grid-4 cat-scroll">
-            <CardCategorias />
+           {/* <CardCategorias />*/}
+            <CategoriasHome />
 
             <li>
               <a className="cat-card" href="#/listado">

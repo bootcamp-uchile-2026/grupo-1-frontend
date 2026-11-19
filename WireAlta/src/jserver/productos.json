@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Vestido de lino blanco",
       "precio": 39990,
-      "imagenUrl": "https://cdn.stylenow.cl/productos/vestido-lino-blanco.jpg",
+      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "mujer",
       "novedad": true,
       "oferta": false
@@ -13,7 +13,7 @@
       "id": 2,
       "nombre": "Camisa oxford celeste",
       "precio": 29990,
-      "imagenUrl": "https://cdn.stylenow.cl/productos/camisa-oxford-celeste.jpg",
+      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "hombre",
       "novedad": false,
       "oferta": false
@@ -22,7 +22,16 @@
       "id": 3,
       "nombre": "Bolso tote de lona",
       "precio": 24990,
-      "imagenUrl": "https://cdn.stylenow.cl/productos/bolso-tote-lona.jpg",
+      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "accesorios",
+      "novedad": false,
+      "oferta": true
+    },
+    {
+      "id": 4,
+      "nombre": "Chancho",
+      "precio": 24990,
+      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "accesorios",
       "novedad": false,
       "oferta": true
