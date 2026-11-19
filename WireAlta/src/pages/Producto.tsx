@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
+import { useCarritoStore } from '../store/useCarritoStore'
 
 import '../assets/css/views/producto.css'
 
@@ -30,6 +31,9 @@ export function Producto() {
 }
 
 function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
+
+  const agregar = useCarritoStore((estado) => estado.agregar)
+
   const [estado, setEstado] = useState<EstadoProducto>({ tipo: 'cargando' })
 
   useEffect(() => {
@@ -123,7 +127,20 @@ function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
               <p className="buy__price">{formatoPrecio.format(producto.precio)}</p>
 
               <div className="buy__ctas">
-                <button type="button" className="btn btn--primary grow">Agregar al carrito</button>
+                {/*<button type="button" className="btn btn--primary grow">Agregar al carrito</button>*/}
+                <button
+                  type="button"
+                  className="btn btn--primary grow"
+                  onClick={() =>
+                    agregar({
+                      id,
+                      nombre: producto.nombre,
+                      precio: producto.precio,
+                    })
+                  }
+                >
+                  Agregar al carrito
+                </button>
                 <button type="button" className="icon-btn icon-btn--outline" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                   <svg className="icon" aria-hidden="true">
                     <use href="#i-heart" />

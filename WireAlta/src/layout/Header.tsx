@@ -1,10 +1,28 @@
 import { NavLink } from "react-router";
+import { useCarritoStore } from '../store/useCarritoStore'
+
+export function CarritoIcono() {
+  const cantidadProductos = useCarritoStore((estado) =>
+    estado.items.reduce((total, item) => total + item.cantidad, 0)
+  )
+
+  return cantidadProductos >= 100 ? (
+    <span className="badge-count" aria-hidden="true">
+      +99
+    </span>
+  ) : (
+    <span className="badge-count" aria-hidden="true">
+      {cantidadProductos}
+    </span>
+  )
+}
 
 /** Cabecera del sitio (ver pantallas 01, 02, 15, 15b y 15c del mockup). */
 export function Header() {
 
   return (<>
     <header className="site-header">
+
       <div className="site-header__top">
         <button
           type="button"
@@ -19,7 +37,7 @@ export function Header() {
         <a className="logo" href="/" aria-label="stylenow, ir al inicio">
           stylenow<span aria-hidden="true">.</span>
         </a>
-        <button
+        {/*<button
           type="button"
           className="icon-btn hide-m"
           aria-label="Abrir menú de categorías"
@@ -28,7 +46,7 @@ export function Header() {
           <svg className="icon" aria-hidden="true">
             <use href="#i-menu" />
           </svg>
-        </button>
+        </button>*/}
         <form className="search site-header__search" role="search" action="#/resultados">
           <svg className="icon icon--20" aria-hidden="true">
             <use href="#i-search" />
@@ -43,15 +61,13 @@ export function Header() {
             placeholder="Buscar productos, marcas y más"
           />
         </form>
-        <a className="icon-btn" href="#/carrito" aria-label="Carrito">
+        <a className="icon-btn" href="/carrito" aria-label="Carrito">
           <svg className="icon" aria-hidden="true">
             <use href="#i-cart" />
           </svg>
-          {/*{Carrito.length > 0 &&
-          <span className="badge-count" aria-hidden="true">
-              {Carrito.length}
-            </span>
-            */}
+
+          < CarritoIcono />
+
         </a>
       </div>
 

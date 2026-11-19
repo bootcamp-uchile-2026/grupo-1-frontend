@@ -3,6 +3,8 @@ import { MainLayout } from './layout/MainLayout'
 import { Inicio } from './pages/Inicio'
 import { Listado } from './pages/Listados'
 import { Producto } from './pages/Producto'
+import { Carrito } from './pages/Carrito'
+import { Checkout } from './pages/Checkout'
 import {NoEncontrado}  from './pages/NoEncontrado'
 
 
@@ -19,6 +21,8 @@ export function App() {
           <Route path="/listados/Calzados" element={<Listado categoria='Calzados' />} />
           <Route path="/listados/Ofertas" element={<Listado categoria='Ofertas' />} />
           <Route path="/listados/:categoria/:id" element={<Producto />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/finalizarCompra" element={<Checkout />} />
           <Route path="*" element={<NoEncontrado />} />
         </Route>
       </Routes>

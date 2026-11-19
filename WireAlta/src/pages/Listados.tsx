@@ -20,6 +20,8 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
     (producto) => producto.categoria?.trim().toLowerCase() === categoria.trim().toLowerCase()
   )
 
+    const todosLosProductos = productos
+
   return (
     <>
       <div className="page-head">
@@ -108,9 +110,52 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
             <ul className="grid grid-3">
               {cargando && <li>Cargando productos...</li>}
 
-              {!cargando && productosFiltrados.length === 0 && (
+              {!cargando && categoria !== 'Todas' && productosFiltrados.length === 0 && (
                 <li>No hay productos en esta categoría.</li>
               )}
+
+              {!cargando && categoria === 'Todas' && (
+              todosLosProductos.map((producto) => 
+                (
+                <li key={producto.id}>
+                  <article className="product-card">
+                    <div className="product-card__media">
+                      {producto.imagenUrl?.[0] ? (
+                        <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
+                        <img
+                          className="ratio-product"
+                          src={producto.imagenUrl[0]}
+                          alt={`${producto.nombre}, foto de producto`}
+                          loading="lazy"
+                        />
+                        </Link>
+                      ) : (
+                        <div className="ph ph--menta ratio-product" role="img" aria-label={`${producto.nombre}, foto de producto`} data-label={`${producto.nombre}, foto de producto`}>
+                          <svg className="icon icon--32" aria-hidden="true">
+                            <use href="#i-nopic" />
+                          </svg>
+                        </div>
+                      )}
+                      <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                        <svg className="icon icon--20" aria-hidden="true">
+                          <use href="#i-heart" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
+                      {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
+                      <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
+                        {producto.nombre}
+                      </Link>
+                      <p className="price">
+                        <span className="price__now">{formatearPrecio(producto.precio)}</span>
+                      </p>
+                    </div>
+                  </article>
+                </li>
+              ))
+            )
+              }
 
               {!cargando && productosFiltrados.map((producto) => (
                 <li key={producto.id}>
@@ -150,6 +195,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                   </article>
                 </li>
               ))}
+              
             </ul>
           </section>
         </div>
