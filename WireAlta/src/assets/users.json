@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camila",
+    "apellido": "Ríos",
+    "email": "camila.rios@stylenow.cl",
+    "password": "stylenow123",
+    "rol": "cliente"
+  },
+  {
+    "id": 2,
+    "nombre": "Martín",
+    "apellido": "Vega",
+    "email": "martin.vega@stylenow.cl",
+    "password": "stylenow123",
+    "rol": "cliente"
+  },
+  {
+    "id": 3,
+    "nombre": "Admin",
+    "apellido": "stylenow",
+    "email": "admin@stylenow.cl",
+    "password": "admin1234",
+    "rol": "admin"
+  }
+]

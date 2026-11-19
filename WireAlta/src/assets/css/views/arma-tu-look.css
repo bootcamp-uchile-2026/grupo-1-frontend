@@ -1,0 +1,20 @@
+/* StyleNow · estilos de vista (arma-tu-look.css) */
+
+/* ---------- Arma tu look ---------- */
+.slot { border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-sm); background: var(--surface-page); }
+.slot.is-empty { background: var(--surface-subtle); border: 1.5px dashed var(--secondary-500); }
+.slot__label { font-size: var(--label3-size); color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; font-weight: var(--weight-semibold); }
+.slot .ph { aspect-ratio: 276 / 180; }
+.slot.is-empty .ph { background: transparent; }
+.picker { border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-base); }
+.pick { display: flex; flex-direction: column; gap: var(--space-xs); }
+.pick .ph { aspect-ratio: 1; }
+.builder-bar { background: var(--surface-subtle); border-radius: var(--radius-xl); padding: var(--space-sm) var(--space-base); display: flex; align-items: center; gap: var(--space-lg); flex-wrap: wrap; }
+.builder-bar__thumbs { display: flex; gap: var(--space-xs); }
+.builder-bar__thumbs .ph { width: 32px; aspect-ratio: 1; border-radius: var(--radius-md); }
+.builder-bar__thumbs .ph--empty { background: var(--surface-page); }
+@media (max-width: 767px) {
+  .slot { flex-direction: row; align-items: center; }
+  .slot .ph { width: 80px; flex: none; aspect-ratio: 1; }
+  .builder-bar { flex-direction: column; align-items: stretch; }
+}

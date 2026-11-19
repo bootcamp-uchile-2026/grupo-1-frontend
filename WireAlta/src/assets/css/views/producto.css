@@ -1,0 +1,31 @@
+/* StyleNow · estilos de vista (producto.css) */
+
+/* ---------- Producto: galería y panel de compra ---------- */
+.gallery { display: flex; flex-direction: column; gap: var(--space-xs); }
+.gallery__main { position: relative; }
+.gallery__main .ph { aspect-ratio: 620 / 620; }
+.gallery__nav { position: absolute; top: 50%; transform: translateY(-50%); }
+.gallery__nav--prev { left: var(--space-base); } .gallery__nav--next { right: var(--space-base); }
+.gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); }
+.gallery__thumbs button { padding: 0; border: 2px solid transparent; border-radius: var(--radius-lg); background: none; }
+.gallery__thumbs button[aria-current="true"] { border-color: var(--action-primary); }
+.gallery__thumbs .ph { aspect-ratio: 144 / 108; }
+.buy { display: flex; flex-direction: column; gap: var(--space-base); }
+.buy__rating { display: flex; align-items: center; gap: var(--space-xs); font-size: var(--body3-size); color: var(--text-secondary); flex-wrap: wrap; }
+.stars { color: var(--warning-900); letter-spacing: 2px; }
+.buy__price { font-size: var(--h6-size); line-height: var(--h6-lh); font-weight: var(--weight-bold); }
+.buy__label { font-size: var(--label2-size); font-weight: var(--weight-semibold); display: flex; justify-content: space-between; }
+.buy__hint { font-size: var(--body4-size); color: var(--text-warning); display: flex; gap: var(--space-xs2); align-items: center; }
+.buy__ctas { display: flex; gap: var(--space-sm); }
+.buy__perks { display: flex; flex-direction: column; gap: var(--space-xs); font-size: var(--body4-size); color: var(--text-secondary); }
+.buy__perks li { display: flex; gap: var(--space-xs); align-items: center; }
+.info-fit { background: var(--surface-subtle); border-radius: var(--radius-lg); padding: var(--space-base); font-size: var(--body4-size); color: var(--text-secondary); display: flex; flex-direction: column; gap: var(--space-xs2); }
+.info-fit strong { color: var(--text-primary); font-size: var(--label2-size); }
+.price-alert { border: 1px solid var(--border-subtle); background: var(--surface-subtle); border-radius: var(--radius-lg); padding: var(--space-base); display: flex; flex-direction: column; gap: var(--space-sm); }
+.price-alert.is-active { background: var(--surface-success); border-color: var(--success-300); }
+.price-alert strong { font-size: var(--label2-size); font-weight: var(--weight-semibold); }
+.price-alert p { font-size: var(--body4-size); color: var(--text-secondary); }
+
+/* Agregado al carrito (toast/modal) */
+.added { background: var(--surface-page); border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); padding: var(--space-lg); width: 440px; max-width: 100%; display: flex; flex-direction: column; gap: var(--space-base); }
+@media (max-width: 767px) { .added { width: 100%; border-radius: var(--radius-2xl) var(--radius-2xl) 0 0; } }
