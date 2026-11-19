@@ -1,6 +1,10 @@
 import { NavLink } from "react-router";
 import { useCarritoStore } from '../store/useCarritoStore'
 
+interface HeaderSesionProps {
+  sesion?: boolean
+}
+
 export function CarritoIcono() {
   const cantidadProductos = useCarritoStore((estado) =>
     estado.items.reduce((total, item) => total + item.cantidad, 0)
@@ -18,7 +22,7 @@ export function CarritoIcono() {
 }
 
 /** Cabecera del sitio (ver pantallas 01, 02, 15, 15b y 15c del mockup). */
-export function Header() {
+export function Header({ sesion = false }: HeaderSesionProps) {
 
   return (<>
     <header className="site-header">
@@ -56,6 +60,26 @@ export function Header() {
           </label>
           <input id="q" type="search" name="q" placeholder="Buscar productos, marcas y más" disabled/>
         </form>
+        {sesion ? (
+          <a className="site-header__account" href="#/mis-compras" aria-label="Mi cuenta">
+            <svg className="icon" aria-hidden="true">
+              <use href="#i-account" />
+            </svg>
+            <span>Mi cuenta</span>
+          </a>
+        ) : (
+          <a
+            className="site-header__account"
+            href="/login"
+            aria-label="Ingresar / Registrarme"
+          >
+            <svg className="icon" aria-hidden="true">
+              <use href="#i-account" />
+            </svg>
+            <span>Ingresar / Registrarme</span>
+          </a>
+        )}
+
         <a className="icon-btn" href="/carrito" aria-label="Carrito">
           <svg className="icon" aria-hidden="true">
             <use href="#i-cart" />

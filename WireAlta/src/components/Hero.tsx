@@ -370,11 +370,6 @@ export function Hero({ data = HERO_DATA }: HeroProps) {
 
   /* ---------- Hotspots ---------- */
 
-  const toggleHotspot = (key: string) => {
-    const cur = openRef.current;
-    setOpenHs(cur && cur.key === key && cur.pinned ? null : { key, pinned: true });
-  };
-
   const onHsPointerEnter = (key: string) => (e: ReactPointerEvent<HTMLDivElement>) => {
     if (e.pointerType !== 'mouse') return;
     if (openRef.current?.key === key || dismissed.current.has(key)) return;

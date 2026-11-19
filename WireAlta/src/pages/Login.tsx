@@ -1,7 +1,7 @@
 
 import '../assets/css/views/cuenta.css'
 
-export default function Login() {
+export function Login() {
   return (
     <>
       <div className="container main" style={{ paddingBlock: 'var(--space-xl5)' }}>
@@ -29,14 +29,13 @@ export default function Login() {
                 <input type="checkbox" name="c" />
                 Recordarme
               </label>
-              <a className="link link--sm" href="#/recuperar-contrasena">¿Olvidaste tu contraseña?</a>
+              {/*<a className="link link--sm" href="#/recuperar-contrasena">¿Olvidaste tu contraseña?</a>*/}
             </div>
             <button type="button" className="btn btn--primary btn--block">Ingresar</button>
             <p className="auth__or">o</p>
-            <button type="button" className="btn btn--neutral btn--block">Continuar con Google</button>
             <p className="body-3" style={{ textAlign: 'center' }}>
               ¿No tienes cuenta?
-              <a className="link" href="#/registro">Regístrate</a>
+              <a className="link" href="#/registro" style={{paddingLeft:'10px'}}> Regístrate</a>
             </p>
           </form>
         </div>

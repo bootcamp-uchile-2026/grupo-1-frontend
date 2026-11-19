@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router'
 import { MainLayout } from './layout/MainLayout'
 import { Inicio } from './pages/Inicio'
+import { Login } from './pages/Login'
 import { Listado } from './pages/Listados'
 import { Producto } from './pages/Producto'
 import { Carrito } from './pages/Carrito'
 import { Checkout } from './pages/Checkout'
 import { AyudaCambios } from './pages/AyudaCambios'
-import {NoEncontrado}  from './pages/NoEncontrado'
+import { NoEncontrado } from './pages/NoEncontrado'
 
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<MainLayout />} >
           <Route index element={<Inicio />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/listados" element={<Inicio />} />
           <Route path="/listados/Mujer" element={<Listado categoria='Mujer' />} />
           <Route path="/listados/Hombre" element={<Listado categoria='Hombre' />} />
