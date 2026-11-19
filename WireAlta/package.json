@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "jServer": "pnpm json-server src/assets/users.json --port 3001"
+    "jServer": "pnpm json-server src/assets/users.json",
+    "jCategorias": "pnpm json-server --watch src/jserver/categorias.json --port 3005",
+    "jProductos": "pnpm json-server --watch src/jserver/productos.json --port 3006"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -20,7 +22,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
-    "json-server": "1.0.0-beta.15",
+    "json-server": "^1.0.0-beta.15",
     "oxlint": "^1.89.0",
     "typescript": "~7.0.2",
     "vite": "^8.3.5"

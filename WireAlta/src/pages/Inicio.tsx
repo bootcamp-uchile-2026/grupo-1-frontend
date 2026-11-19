@@ -6,7 +6,7 @@ export function Inicio() {
   return (
     <>
     <Hero />
-      <section className="hero" aria-roledescription="carrusel" aria-label="Looks destacados">
+      {/*<section className="hero" aria-roledescription="carrusel" aria-label="Looks destacados">
         <h1 className="hero__title">
           <span>Tu estilo,</span>
           <span className="outline">tu momento.</span>
@@ -72,7 +72,7 @@ export function Inicio() {
             <small>Toca un punto para ver la prenda</small>
           </div>
         </div>
-      </section>
+      </section>*/}
       <section className="perks" aria-label="Beneficios">
         <ul className="container">
           <li>

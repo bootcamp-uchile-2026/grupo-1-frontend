@@ -12,7 +12,7 @@ type Productos = {
     id: number,
     nombre: string,
     precio: number,
-    imagenUrl: string,
+    imagenUrl: string[],
     categoria: string,
     novedad: boolean,
     oferta: boolean
@@ -23,8 +23,10 @@ export function CardCategorias() {
     const [cargando, setCargando] = useState(true);
     const [categorias, setCategorias] = useState<Categorias[]>([]);
     const [productos, setProductos] = useState<Productos[]>([]);
-    const URL_CATEGORIAS = 'http://13.58.173.192:3000/categorias'
-    const URL_PRODUCTOS = 'http://13.58.173.192:3000/productos'
+    //const URL_CATEGORIAS = 'http://13.58.173.192:3000/categorias'
+    //const URL_PRODUCTOS = 'http://13.58.173.192:3000/productos'
+    const URL_CATEGORIAS = 'http://localhost:3005/categorias'
+    const URL_PRODUCTOS = 'http://localhost:3006/productos'
 
     useEffect(() => {
 
@@ -46,7 +48,8 @@ export function CardCategorias() {
                 const datosProductos = await responseProductos.json()
 
                 setCategorias(datosCategorias)
-                setProductos(datosProductos.productos) // el array viene dentro "productos"
+                //setProductos(datosProductos.productos) // el array viene dentro "productos" en backend oficial
+                setProductos(datosProductos)
 
             } catch (errorPeticion) {
 
@@ -81,12 +84,12 @@ export function CardCategorias() {
 
         {cargando ? <p>Cargando...</p> : categorias.map((categoria) => (
             <li key={categoria.id}>
-                <a className="cat-card" href={`listado/${categoria.slug}`}>
+                <a className="cat-card" href={`listados/${categoria.slug}`}>
                     <div className="cat-card__bg" >
-                        <div className="cat-card__figure" role="img" aria-label={categoria.nombre}>
-                            <svg className="icon icon--32" aria-hidden="true">
+                        <div className="cat-card__figure" role="img" aria-label={categoria.nombre} style={{ backgroundImage: `url(${categoria.imagenUrl})`, backgroundSize:'200%', backgroundPositionX: 'center', backgroundPositionY:'0'}}>
+                           { !categoria.imagenUrl && <svg className="icon icon--32" aria-hidden="true">
                                 <use href="#i-nopic" />
-                            </svg>
+                            </svg> }
                         </div>
                         <div className="cat-card__label">
                             <span>

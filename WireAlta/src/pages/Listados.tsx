@@ -14,58 +14,15 @@ export function Listado( {categoria}: CategoriaBuscadaProp ) {
           <nav className="crumbs" aria-label="Migas de pan">
             <ol>
               <li>
-                <a href="#">Inicio</a>
+                <a href="/">Inicio</a>
               </li>
               <li>
-                <a href="#">{categoria}</a>
+                {categoria}
               </li>
             </ol>
           </nav>
           <h1 className="h3 page-head__title">{categoria}</h1>
           <p className="page-head__lead">Encuentra el vestido perfecto para cada ocasión.</p>
-        </div>
-      </div>
-      <div className="filter-bar">
-        <div className="container">
-          <button type="button" className="chip chip--square hide-d">
-            <svg className="icon icon--16" aria-hidden="true">
-              <use href="#i-filter" />
-            </svg>
-            Filtros (2)
-          </button>
-          <div className="chips hide-m">
-            <button type="button" className="chip chip--square" aria-haspopup="listbox">
-              Talla
-              <svg className="icon icon--16" aria-hidden="true">
-                <use href="#i-chevron-down" />
-              </svg>
-            </button>
-            <button type="button" className="chip chip--square" aria-haspopup="listbox">
-              Color
-              <svg className="icon icon--16" aria-hidden="true">
-                <use href="#i-chevron-down" />
-              </svg>
-            </button>
-            <button type="button" className="chip chip--square" aria-haspopup="listbox">
-              Precio
-              <svg className="icon icon--16" aria-hidden="true">
-                <use href="#i-chevron-down" />
-              </svg>
-            </button>
-            <button type="button" className="chip chip--square" aria-haspopup="listbox">
-              Ocasión
-              <svg className="icon icon--16" aria-hidden="true">
-                <use href="#i-chevron-down" />
-              </svg>
-            </button>
-          </div>
-          <span className="filter-bar__count" role="status">48 productos</span>
-          <button type="button" className="chip chip--square" aria-haspopup="listbox">
-            Ordenar: Relevancia
-            <svg className="icon icon--16" aria-hidden="true">
-              <use href="#i-chevron-down" />
-            </svg>
-          </button>
         </div>
       </div>
       <div className="container main">
