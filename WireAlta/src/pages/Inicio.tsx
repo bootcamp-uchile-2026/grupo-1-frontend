@@ -118,13 +118,13 @@ export function Inicio() {
               <h2 className="h3" id="cat-t">Categorías populares</h2>
               <p>Elige por dónde empezar. Lo nuevo de la temporada, ordenado para ti.</p>
             </div>
-            <a className="link" href="#/listado">Ver todas las categorías</a>
+           {/* <a className="link" href="#/listado">Ver todas las categorías</a> */}
           </div>
           <ul className="grid grid-4 cat-scroll">
            {/* <CardCategorias />*/}
             <CategoriasHome />
 
-            <li>
+           {/* <li>
               <a className="cat-card" href="#/listado">
                 <div className="cat-card__bg ph--lavanda" style={{ background: 'var(--media-lavanda)' }}>
                   <div className="cat-card__figure" role="img" aria-label="Modelo categoría Mujer">
@@ -145,7 +145,8 @@ export function Inicio() {
                   </div>
                 </div>
               </a>
-            </li>
+            </li> 
+
             <li>
               <a className="cat-card" href="#/listado">
                 <div className="cat-card__bg ph--amarillo" style={{ background: 'var(--media-amarillo)' }}>
@@ -216,6 +217,7 @@ export function Inicio() {
                 </div>
               </a>
             </li>
+            */}
           </ul>
         </div>
       </section>
@@ -228,17 +230,8 @@ export function Inicio() {
               <p>Looks completos armados por nuestro equipo. Ábrelos para ver cada prenda.</p>
             </div>
             <div className="row gap-sm">
-              <a className="link" href="#/looks">Ver todos los looks</a>
-              <button type="button" className="icon-btn icon-btn--white hide-m" aria-label="Look anterior" disabled>
-                <svg className="icon icon--20" aria-hidden="true">
-                  <use href="#i-arrow-left" />
-                </svg>
-              </button>
-              <button type="button" className="icon-btn icon-btn--white hide-m" aria-label="Look siguiente">
-                <svg className="icon icon--20" aria-hidden="true">
-                  <use href="#i-arrow-right" />
-                </svg>
-              </button>
+              {/*<a className="link" href="#/looks">Ver todos los looks</a>*/}
+              
             </div>
           </div>
           <ul className="inspo__track">

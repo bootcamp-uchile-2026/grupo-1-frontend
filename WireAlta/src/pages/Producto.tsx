@@ -141,11 +141,11 @@ function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
                 >
                   Agregar al carrito
                 </button>
-                <button type="button" className="icon-btn icon-btn--outline" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                {/*<button type="button" className="icon-btn icon-btn--outline" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                   <svg className="icon" aria-hidden="true">
                     <use href="#i-heart" />
                   </svg>
-                </button>
+                </button>*/}
               </div>
 
               <ul className="buy__perks">

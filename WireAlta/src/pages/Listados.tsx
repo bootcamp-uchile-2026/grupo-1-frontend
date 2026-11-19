@@ -1,4 +1,3 @@
-import { type CSSProperties } from 'react'
 import { useFetchCatalogo } from '../components/FetchCatalogo'
 import { Link } from 'react-router'
 
@@ -41,8 +40,9 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
         </div>
       </div>
       <div className="container main">
-        <div className="split--filters" style={{ display: 'grid' }}>
-          <aside aria-label="Filtros" className="hide-m">
+        <div className="split--filters--" style={{ display: 'grid' }}>
+         {/* <aside aria-label="Filtros" className="hide-m">
+            
             <div className="filter-group">
               <h3>Categoría</h3>
               <label className="check">
@@ -105,7 +105,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                 Más de $40.000
               </label>
             </div>
-          </aside>
+          </aside>*/}
           <section aria-label="Productos">
             <ul className="grid grid-3">
               {cargando && <li>Cargando productos...</li>}
@@ -136,11 +136,11 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                           </svg>
                         </div>
                       )}
-                      <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                     {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                         <svg className="icon icon--20" aria-hidden="true">
                           <use href="#i-heart" />
                         </svg>
-                      </button>
+                      </button> */}
                     </div>
                     <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
                       {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
@@ -177,11 +177,11 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                           </svg>
                         </div>
                       )}
-                      <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                     {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                         <svg className="icon icon--20" aria-hidden="true">
                           <use href="#i-heart" />
                         </svg>
-                      </button>
+                      </button> */}
                     </div>
                     <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
                       {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
@@ -199,42 +199,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
             </ul>
           </section>
         </div>
-        <nav aria-label="Paginación">
-          <ul className="pagination">
-            <li>
-              <a href="#" aria-label="Página anterior">
-                <svg className="icon icon--16" aria-hidden="true">
-                  <use href="#i-arrow-left" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" aria-current="page" aria-label="Página 1">1</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Página 2">2</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Página 3">3</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Página 4">4</a>
-            </li>
-            <li>
-              <span>…</span>
-            </li>
-            <li>
-              <a href="#" aria-label="Página 10">10</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Página siguiente">
-                <svg className="icon icon--16" aria-hidden="true">
-                  <use href="#i-arrow-right" />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        
       </div>
     </>
   )

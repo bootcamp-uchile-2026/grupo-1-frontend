@@ -13,17 +13,17 @@ export function Footer() {
           <div>
             <h2>Síguenos</h2>
             <div className="site-footer__social">
-              <a className="icon-btn icon-btn--inverse" href="#" aria-label="Instagram de stylenow">
+              <a className="icon-btn icon-btn--inverse" target="_blank" href="https://www.instagram.com/fcfm_uchile/" aria-label="Instagram de stylenow">
                 <svg className="icon icon--20" aria-hidden="true">
                   <use href="#i-instagram" />
                 </svg>
               </a>
-              <a className="icon-btn icon-btn--inverse" href="#" aria-label="TikTok de stylenow">
+              <a className="icon-btn icon-btn--inverse" target="_blank" href="https://www.tiktok.com/@admision.fcfm.uchile" aria-label="TikTok de stylenow">
                 <svg className="icon icon--20" aria-hidden="true">
                   <use href="#i-tiktok" />
                 </svg>
               </a>
-              <a className="icon-btn icon-btn--inverse" href="#" aria-label="Pinterest de stylenow">
+              <a className="icon-btn icon-btn--inverse" target="_blank" href="https://cl.pinterest.com/" aria-label="Pinterest de stylenow">
                 <svg className="icon icon--20" aria-hidden="true">
                   <use href="#i-pinterest" />
                 </svg>
@@ -32,14 +32,14 @@ export function Footer() {
           </div>
           <div>
             <h2>Ayuda</h2>
-            <ul>
-              <li>
+            <ul style={{paddingBottom:'100px'}}>
+              {/*<li>
                 <a href="#/ayuda-cambios">Envíos</a>
-              </li>
+              </li>*/}
               <li>
-                <a href="#/ayuda-cambios">Cambios y devoluciones</a>
+                <a href="/ayudaCambios">Cambios y devoluciones</a>
               </li>
-              <li>
+              {/*<li>
                 <a href="#/ayuda-cambios">Pagos</a>
               </li>
               <li>
@@ -47,7 +47,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="#/preferencias-cookies">Política de cookies</a>
-              </li>
+              </li>*/}
             </ul>
           </div>
           <a className="icon-btn icon-btn--white site-footer__top-btn" href="#top" aria-label="Volver arriba" style={{ color: 'var(--icon-brand)' }}>

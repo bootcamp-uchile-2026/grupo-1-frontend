@@ -72,10 +72,8 @@ export function Header() {
       </div>
 
       <nav className="site-nav" aria-label="Principal">
-        <NavLink className="chapter-link" to="/" >
-          {({ isActive }) => {
-            return (isActive ? "Inicio (activo)" : "Inicio")
-          }}
+        <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/" >
+         Inicio
         </NavLink>
         <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Mujer" >
           Mujer

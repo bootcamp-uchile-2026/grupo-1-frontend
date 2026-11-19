@@ -429,6 +429,12 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .dropdown__opt[aria-selected="true"] { background: var(--primary-50); color: var(--text-link); font-weight: var(--weight-semibold); }
 .dropdown__opt[aria-disabled="true"] { color: var(--text-disabled); pointer-events: none; }
 
+/*disable*/
+
+.cursorDisable {
+  cursor:not-allowed;
+}
+
 /* SearchBar */
 .search { display: flex; align-items: center; gap: var(--space-sm); height: 52px; padding-inline: var(--space-lg); background: var(--secondary-50); border: 1px solid var(--secondary-200); border-radius: var(--radius-full); color: var(--neutral-400); min-width: 0; }
 .search input { flex: 1; min-width: 0; border: 0; background: transparent; font-size: var(--body2-size); line-height: var(--body2-lh); color: var(--neutral-900); }

@@ -1,7 +1,7 @@
 
 import '../assets/css/views/ayuda.css'
 
-export default function AyudaCambios() {
+export function AyudaCambios() {
   return (
     <>
       <div className="page-head page-head--plain">
@@ -9,11 +9,11 @@ export default function AyudaCambios() {
           <nav className="crumbs" aria-label="Migas de pan">
             <ol>
               <li>
-                <a href="#">Inicio</a>
+                <a href="/">Inicio</a>
               </li>
-              <li>
+              {/*<li>
                 <a href="#">Ayuda</a>
-              </li>
+              </li>*/}
               <li>
                 <span aria-current="page">Cambios y devoluciones</span>
               </li>
@@ -23,17 +23,10 @@ export default function AyudaCambios() {
         </div>
       </div>
       <div className="container main stack gap-lg">
-        <form className="search" role="search" style={{ maxWidth: '560px' }}>
-          <svg className="icon icon--20" aria-hidden="true">
-            <use href="#i-search" />
-          </svg>
-          <label className="sr-only" htmlFor="hq">Buscar en ayuda</label>
-          <input id="hq" type="search" placeholder="¿En qué te podemos ayudar?" />
-        </form>
         <nav aria-label="Temas de ayuda">
           <ul className="grid topics" style={{ gridTemplateColumns: 'repeat(5,1fr)' }}>
             <li>
-              <a className="topic" href="#">
+              <a className="topic cursorDisable" href="#">
                 <span className="topic__icon">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-truck" />
@@ -44,7 +37,7 @@ export default function AyudaCambios() {
               </a>
             </li>
             <li>
-              <a className="topic" href="#" aria-current="page">
+              <a className="topic"  aria-current="page">
                 <span className="topic__icon">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-refresh" />
@@ -55,7 +48,7 @@ export default function AyudaCambios() {
               </a>
             </li>
             <li>
-              <a className="topic" href="#">
+              <a className="topic cursorDisable" href="#">
                 <span className="topic__icon">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-card" />
@@ -66,7 +59,7 @@ export default function AyudaCambios() {
               </a>
             </li>
             <li>
-              <a className="topic" href="#">
+              <a className="topic cursorDisable" href="#">
                 <span className="topic__icon">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-account" />
@@ -77,7 +70,7 @@ export default function AyudaCambios() {
               </a>
             </li>
             <li>
-              <a className="topic" href="#">
+              <a className="topic cursorDisable" href="#">
                 <span className="topic__icon">
                   <svg className="icon icon--20" aria-hidden="true">
                     <use href="#i-tag" />
@@ -94,19 +87,19 @@ export default function AyudaCambios() {
             <nav className="side-nav" aria-label="Secciones de ayuda">
               <ul>
                 <li>
-                  <a href="#/ayuda-cambios">Envíos</a>
+                  <a className="cursorDisable" href="#/ayuda-cambios">Envíos</a>
                 </li>
                 <li>
-                  <a href="#/ayuda-cambios" aria-current="page">Cambios y devoluciones</a>
+                  <a href="/ayudaCambios" aria-current="page">Cambios y devoluciones</a>
                 </li>
                 <li>
-                  <a href="#/ayuda-cambios">Pagos</a>
+                  <a className="cursorDisable" href="#/ayuda-cambios">Pagos</a>
                 </li>
                 <li>
-                  <a href="#/ayuda-cambios">Mi cuenta</a>
+                  <a className="cursorDisable" href="#/ayuda-cambios">Mi cuenta</a>
                 </li>
                 <li>
-                  <a href="#/ayuda-cambios">Tallas y cuidados</a>
+                  <a className="cursorDisable" href="#/ayuda-cambios">Tallas y cuidados</a>
                 </li>
               </ul>
             </nav>
@@ -172,10 +165,10 @@ export default function AyudaCambios() {
                 </div>
               </li>
             </ol>
-            <div className="row gap-sm wrap">
+           {/*} <div className="row gap-sm wrap">
               <a className="btn btn--primary" href="#/iniciar-cambio">Iniciar cambio o devolución</a>
               <button type="button" className="btn btn--secondary">Ver condiciones</button>
-            </div>
+            </div>*/}
             <h3 className="h6">Preguntas frecuentes</h3>
             <div>
               <details className="accordion">
@@ -223,24 +216,19 @@ export default function AyudaCambios() {
                 <p className="body-4 text-secondary">Lunes a viernes de 9:00 a 18:00 h.</p>
               </div>
               <div className="row gap-xs">
-                <button type="button" className="btn btn--neutral btn--md">
-                  <svg className="icon icon--16" aria-hidden="true">
-                    <use href="#i-chat" />
-                  </svg>
-                  Chat
-                </button>
-                <button type="button" className="btn btn--neutral btn--md">
-                  <svg className="icon icon--16" aria-hidden="true">
+               
+                <a target='_blank' href='https://wa.me/12345678?text=Este%20es%20un%20whatsapp%20de%20ejemplo.%20No%20es%20real.' className="btn btn--neutral btn--md">
+                  <svg  className="icon icon--16" aria-hidden="true">
                     <use href="#i-phone" />
                   </svg>
                   WhatsApp
-                </button>
-                <button type="button" className="btn btn--neutral btn--md">
+                </a>
+                <a target='_blank' href='mailto:mail@mail.com' className="btn btn--neutral btn--md">
                   <svg className="icon icon--16" aria-hidden="true">
                     <use href="#i-mail" />
                   </svg>
                   Correo
-                </button>
+                </a>
               </div>
             </div>
           </article>
