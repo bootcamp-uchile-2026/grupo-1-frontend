@@ -19,7 +19,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
     (producto) => producto.categoria?.trim().toLowerCase() === categoria.trim().toLowerCase()
   )
 
-    const todosLosProductos = productos
+  const todosLosProductos = productos
 
   return (
     <>
@@ -36,12 +36,15 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
             </ol>
           </nav>
           <h1 className="h3 page-head__title">{categoria}</h1>
-          <p className="page-head__lead">Encuentra el vestido perfecto para cada ocasión.</p>
+          {(categoria == 'Hombre' || categoria == 'Mujer') && (<p className="page-head__lead">Toda la ropa de {categoria.trim().toLowerCase()} que buscas en un solo lugar.</p>)}
+          {categoria == 'Ofertas' && (<p className="page-head__lead">No te pierdas nuestras grandes. {categoria.trim().toLowerCase()}</p>)}
+          {(categoria == 'Calzado' || categoria == 'vestido') && (<p className="page-head__lead">Encuentra el {categoria.trim().toLowerCase()} que siempre quisiste.</p>)}
+          {categoria == 'Accesorios' && (<p className="page-head__lead">Encuentra los {categoria.trim().toLowerCase()} que siempre quisiste.</p>)}
         </div>
       </div>
       <div className="container main">
         <div className="split--filters--" style={{ display: 'grid' }}>
-         {/* <aside aria-label="Filtros" className="hide-m">
+          {/* <aside aria-label="Filtros" className="hide-m">
             
             <div className="filter-group">
               <h3>Categoría</h3>
@@ -115,46 +118,46 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
               )}
 
               {!cargando && categoria === 'Todas' && (
-              todosLosProductos.map((producto) => 
+                todosLosProductos.map((producto) =>
                 (
-                <li key={producto.id}>
-                  <article className="product-card">
-                    <div className="product-card__media">
-                      {producto.imagenUrl?.[0] ? (
-                        <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
-                        <img
-                          className="ratio-product"
-                          src={producto.imagenUrl[0]}
-                          alt={`${producto.nombre}, foto de producto`}
-                          loading="lazy"
-                        />
-                        </Link>
-                      ) : (
-                        <div className="ph ph--menta ratio-product" role="img" aria-label={`${producto.nombre}, foto de producto`} data-label={`${producto.nombre}, foto de producto`}>
-                          <svg className="icon icon--32" aria-hidden="true">
-                            <use href="#i-nopic" />
-                          </svg>
-                        </div>
-                      )}
-                     {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                  <li key={producto.id}>
+                    <article className="product-card">
+                      <div className="product-card__media">
+                        {producto.imagenUrl?.[0] ? (
+                          <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
+                            <img
+                              className="ratio-product"
+                              src={producto.imagenUrl[0]}
+                              alt={`${producto.nombre}, foto de producto`}
+                              loading="lazy"
+                            />
+                          </Link>
+                        ) : (
+                          <div className="ph ph--menta ratio-product" role="img" aria-label={`${producto.nombre}, foto de producto`} data-label={`${producto.nombre}, foto de producto`}>
+                            <svg className="icon icon--32" aria-hidden="true">
+                              <use href="#i-nopic" />
+                            </svg>
+                          </div>
+                        )}
+                        {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                         <svg className="icon icon--20" aria-hidden="true">
                           <use href="#i-heart" />
                         </svg>
                       </button> */}
-                    </div>
-                    <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
-                      {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
-                      <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
-                        {producto.nombre}
-                      </Link>
-                      <p className="price">
-                        <span className="price__now">{formatearPrecio(producto.precio)}</span>
-                      </p>
-                    </div>
-                  </article>
-                </li>
-              ))
-            )
+                      </div>
+                      <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
+                        {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
+                        <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
+                          {producto.nombre}
+                        </Link>
+                        <p className="price">
+                          <span className="price__now">{formatearPrecio(producto.precio)}</span>
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                ))
+              )
               }
 
               {!cargando && productosFiltrados.map((producto) => (
@@ -163,12 +166,12 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                     <div className="product-card__media">
                       {producto.imagenUrl?.[0] ? (
                         <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
-                        <img
-                          className="ratio-product"
-                          src={producto.imagenUrl[0]}
-                          alt={`${producto.nombre}, foto de producto`}
-                          loading="lazy"
-                        />
+                          <img
+                            className="ratio-product"
+                            src={producto.imagenUrl[0]}
+                            alt={`${producto.nombre}, foto de producto`}
+                            loading="lazy"
+                          />
                         </Link>
                       ) : (
                         <div className="ph ph--menta ratio-product" role="img" aria-label={`${producto.nombre}, foto de producto`} data-label={`${producto.nombre}, foto de producto`}>
@@ -177,7 +180,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                           </svg>
                         </div>
                       )}
-                     {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
+                      {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
                         <svg className="icon icon--20" aria-hidden="true">
                           <use href="#i-heart" />
                         </svg>
@@ -195,11 +198,11 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                   </article>
                 </li>
               ))}
-              
+
             </ul>
           </section>
         </div>
-        
+
       </div>
     </>
   )

@@ -103,7 +103,7 @@ export function Header({ sesion = false }: HeaderSesionProps) {
         <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Accesorios" >
           Accesorios
         </NavLink>
-        <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Calzados" >
+        <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Calzado" >
           Calzados
         </NavLink>
       </nav>

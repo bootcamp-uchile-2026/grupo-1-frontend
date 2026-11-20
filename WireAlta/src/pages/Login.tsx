@@ -25,18 +25,18 @@ export function Login() {
               </div>
             </div>
             <div className="row" style={{ justifyContent: 'space-between' }}>
-              <label className="check">
+             {/* <label className="check">
                 <input type="checkbox" name="c" />
                 Recordarme
               </label>
-              {/*<a className="link link--sm" href="#/recuperar-contrasena">¿Olvidaste tu contraseña?</a>*/}
+              <a className="link link--sm" href="#/recuperar-contrasena">¿Olvidaste tu contraseña?</a>*/}
             </div>
             <button type="button" className="btn btn--primary btn--block">Ingresar</button>
-            <p className="auth__or">o</p>
+            {/*<p className="auth__or">o</p>
             <p className="body-3" style={{ textAlign: 'center' }}>
               ¿No tienes cuenta?
               <a className="link" href="#/registro" style={{paddingLeft:'10px'}}> Regístrate</a>
-            </p>
+            </p>*/}
           </form>
         </div>
       </div>

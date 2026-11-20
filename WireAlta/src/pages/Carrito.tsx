@@ -33,7 +33,7 @@ function MiniaturaProducto({ src }: { src?: string }) {
         />
       ) : (
         <svg className="icon icon--32" focusable="false">
-          <use href="#i-nopic" />
+          {/*<use href="#i-nopic" />*/}
         </svg>
       )}
     </div>
@@ -77,12 +77,11 @@ export function Carrito({
           <section aria-label="Productos en el carrito">
             <ul style={{ borderTop: '1px solid var(--border-default)' }}>
               {items.map(({ producto, cantidad }) => {
-                const imagen = imagenPorId.get(producto.id)
+                const imagen = imagenPorId.get(String(producto.id)) || "/img/sin-imagen.jpg";
 
                 return (
                   <li className="cart-item" key={producto.id}>
                     <MiniaturaProducto key={imagen ?? ''} src={imagen} />
-
                     <div className="stack gap-xs">
                       <span className="mini__name">{producto.nombre}</span>
                       <span className="mini__meta">

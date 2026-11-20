@@ -21,7 +21,7 @@ export function App() {
           <Route path="/listados/Mujer" element={<Listado categoria='Mujer' />} />
           <Route path="/listados/Hombre" element={<Listado categoria='Hombre' />} />
           <Route path="/listados/Accesorios" element={<Listado categoria='Accesorios' />} />
-          <Route path="/listados/Calzados" element={<Listado categoria='Calzados' />} />
+          <Route path="/listados/Calzado" element={<Listado categoria='Calzado' />} />
           <Route path="/listados/Ofertas" element={<Listado categoria='Ofertas' />} />
           <Route path="/listados/:categoria/:id" element={<Producto />} />
           <Route path="/ayudaCambios" element={<AyudaCambios />} />

@@ -4,25 +4,25 @@
       "id": 1,
       "nombre": "Vestido de lino blanco",
       "precio": 39990,
-      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/vestido-lino-blanco.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "mujer",
       "novedad": true,
       "oferta": false
     },
     {
       "id": 2,
-      "nombre": "Camisa oxford celeste",
+      "nombre": "Camisa oxford",
       "precio": 29990,
-      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/camisa-oxford.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "hombre",
       "novedad": false,
       "oferta": false
     },
     {
       "id": 3,
-      "nombre": "Bolso tote de lona",
+      "nombre": "Bolso de lona",
       "precio": 24990,
-      "imagenUrl": ["https://picsum.photos/928/1152", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/bolso-de-lona.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "accesorios",
       "novedad": false,
       "oferta": false
@@ -31,7 +31,7 @@
       "id": 4,
       "nombre": "Abrigo Violeta",
       "precio": 59990,
-      "imagenUrl": ["mujer-abrigo-violeta-pantalon-verde.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/sliders/mujer-abrigo-violeta-pantalon-verde.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "mujer",
       "novedad": false,
       "oferta": false
@@ -40,7 +40,7 @@
       "id": 5,
       "nombre": "Short Violeta",
       "precio": 59990,
-      "imagenUrl": ["mujer-abrigo-verde-short-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/short-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "mujer",
       "novedad": false,
       "oferta": false
@@ -49,7 +49,7 @@
       "id": 6,
       "nombre": "Traje Verde",
       "precio": 59990,
-      "imagenUrl": ["mujer-traje-verde-cartera-lila.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/productos-traje-verde.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "mujer",
       "novedad": false,
       "oferta": false
@@ -58,7 +58,7 @@
       "id": 7,
       "nombre": "Hombre Traje Verde",
       "precio": 59990,
-      "imagenUrl": ["hombre-traje-verde-camisa-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/producto-traje-verde-camisa-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "hombre",
       "novedad": false,
       "oferta": false
@@ -67,7 +67,7 @@
       "id": 8,
       "nombre": "Cartera Lila",
       "precio": 90990,
-      "imagenUrl": ["mujer-traje-verde-cartera-lila.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/producto-cartera-lila.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "accesorios",
       "novedad": false,
       "oferta": false
@@ -76,7 +76,7 @@
       "id": 9,
       "nombre": "Sobretodo Violeta",
       "precio": 120000,
-      "imagenUrl": ["hombre-traje-verde-abrigo-violeta-al-brazo.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/producto-sobretodo-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "hombre",
       "novedad": false,
       "oferta": false
@@ -85,11 +85,24 @@
       "id": 10,
       "nombre": "Hombre Abrigo",
       "precio": 25000,
-      "imagenUrl": ["hombre-abrigo-verde-bufanda-violeta.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "imagenUrl": ["/src/assets/img/productos/hombre-abrigo-verde-.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
       "categoria": "hombre",
       "novedad": false,
       "oferta": false
+    },
+    {
+      "id": 11,
+      "nombre": "Calzado Café",
+      "precio": 80000,
+      "imagenUrl": ["/src/assets/img/productos/calzado-cafe.webp", "https://picsum.photos/928/1152", "https://picsum.photos/928/1152"],
+      "categoria": "calzado",
+      "novedad": false,
+      "oferta": false
     }
+
+
+
+    
   ],
   "pagina": 1,
   "limite": 12,
