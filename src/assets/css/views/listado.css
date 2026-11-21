@@ -1,0 +1,10 @@
+/* StyleNow · estilos de vista (listado.css) */
+
+/* ---------- Listado / Barra y panel de filtros ---------- */
+.filter-bar { border-bottom: 1px solid var(--border-default); padding-block: var(--space-sm); }
+.filter-bar .container { display: flex; align-items: center; gap: var(--space-xs); }
+.filter-bar__count { margin-left: auto; font-size: var(--body4-size); color: var(--text-secondary); }
+.filter-group { padding-block: var(--space-base); border-bottom: 1px solid var(--border-default); display: flex; flex-direction: column; gap: var(--space-sm); }
+.filter-group:first-child { padding-top: 0; }
+.filter-group h3 { font-size: var(--label1-size); font-weight: var(--weight-semibold); }
+.filter-group .check { font-size: var(--body3-size); }

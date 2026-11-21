@@ -1,71 +1,63 @@
 import '../assets/css/home.css'
-import { CategoriasPopulares } from './subcomponents/CategoriasPopulares'
-import { HomeInfoBar } from './subcomponents/HomeInfoBar'
-import { ProductForyou } from './subcomponents/ProductsForYou'
+/*import { CardCategorias } from '../components/cardCategorias'*/
+import { CategoriasHome } from '../components/CategoriasHome'
+import { Hero }  from '../components/Hero'
 
 export function Inicio() {
-    return (
-        <>
-            <main id="home">
-                {/* Slider */}
-                <section id="slider-home">
-                    <div className="container home">
+  return (
+    <>
+    <Hero />
+      <section className="perks" aria-label="Beneficios">
+        <ul className="container">
+          <li>
+            <span className="perks__icon">
+              <svg className="icon icon--20" aria-hidden="true">
+                <use href="#i-truck" />
+              </svg>
+            </span>
+            <span>
+              <strong>Envíos a todo Chile</strong>
+              <small>Rápidos y seguros</small>
+            </span>
+          </li>
+          <li>
+            <span className="perks__icon">
+              <svg className="icon icon--20" aria-hidden="true">
+                <use href="#i-refresh" />
+              </svg>
+            </span>
+            <span>
+              <strong>Cambios fáciles</strong>
+              <small>Hasta 30 días</small>
+            </span>
+          </li>
+          <li>
+            <span className="perks__icon">
+              <svg className="icon icon--20" aria-hidden="true">
+                <use href="#i-card" />
+              </svg>
+            </span>
+            <span>
+              <strong>Paga como prefieras</strong>
+              <small>Tarjetas y transferencias</small>
+            </span>
+          </li>
+        </ul>
+      </section>
+      <section className="section" aria-labelledby="cat-t">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <h2 className="h3" id="cat-t">Categorías populares</h2>
+              <p>Elige por dónde empezar. Lo nuevo de la temporada, ordenado para ti.</p>
+            </div>
+          </div>
+          <ul className="grid grid-4 cat-scroll">
+            <CategoriasHome />
 
-                        <div className="img-placeholder"></div>
-                        <div className="slider-text">
-                            <p className="sub-text">nueva colección</p>
-                            <h1 className="main-title">Tu estilo, tu<br /> momento</h1>
-                            <p className="description">Descubre lo nuevo en ropa y accesorios para cada ocasión.</p>
-                            <button type="button" className="call-to-action">Compra ahora</button>
-                        </div>
-
-                    </div>
-                </section>
-
-                {/* Info Bar */}
-                <section id="highlights-bar">
-                    <div className="container home">
-
-                        <HomeInfoBar infoH3="Envíos a todo Chile" infoP="Envíos rápidos y seguros" />
-
-                        <HomeInfoBar infoH3="Cambios fáciles" infoP="Hasta 30 días" />
-
-                        <HomeInfoBar infoH3="Paga como prefieras" infoP="Tarjeta, transferencia y más" />
-
-                    </div>
-                </section>
-
-                {/* Pop Categories */}
-                <section id="block-popular">
-                    <h2>Categoría populares</h2>
-
-                    <div className="container">
-
-                        <CategoriasPopulares id="1" />
-
-                        <CategoriasPopulares id="2" />
-
-                        <CategoriasPopulares id="3" />
-
-                    </div>
-
-                </section>
-
-                {/* For you */}
-                <section id="block-for-you">
-                    <h2>Inspiración para ti</h2>
-
-                    <div className="container">
-
-                        <ProductForyou />
-
-                        <ProductForyou />
-                        
-                        <ProductForyou />
-
-                    </div>
-                </section>
-            </main>
-        </>
-    )
+          </ul>
+        </div>
+      </section>
+    </>
+  )
 }

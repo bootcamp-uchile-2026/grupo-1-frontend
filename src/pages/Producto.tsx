@@ -1,128 +1,187 @@
-import '../assets/css/views/producto.css';
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router'
+import { useCarritoStore } from '../store/useCarritoStore'
+import { resolveAssetImage } from '../jserver/resolveAssetImage';
+
+import '../assets/css/views/producto.css'
+
+const URL_PRODUCTOS = 'http://localhost:3006/productos'
+const formatoPrecio = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' })
+const normalizarCategoria = (valor: string) => valor.trim().toLowerCase()
+
+type ProductoApi = {
+  nombre: string
+  precio: number
+  categoria: string
+  imagenUrl?: string[]
+  novedad?: boolean
+}
+
+type EstadoProducto =
+  | { tipo: 'cargando' | 'no-encontrado' | 'error' }
+  | { tipo: 'listo'; producto: ProductoApi }
 
 export function Producto() {
-    return (
-        <>
-            <div className="breadcrumbs">
-                <div aria-label="breadcrumbs">
-                    <ul>
-                        <li>
-                            <a href="#">Mujer</a>
-                        </li>
-                        <li>
-                            <a href="#">Vestidos</a>
-                        </li>
-                        <li aria-current="page">
-                            Vestido Lino
-                        </li>
-                    </ul>
+  const { categoria, id } = useParams<'categoria' | 'id'>()
+
+  if (!categoria || !id) {
+    return <p className="container">Producto no encontrado.</p>
+  }
+
+  return <ProductoDetalle key={JSON.stringify([categoria, id])} categoria={categoria} id={id} />
+}
+
+function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
+
+  const agregar = useCarritoStore((estado) => estado.agregar)
+
+  const [estado, setEstado] = useState<EstadoProducto>({ tipo: 'cargando' })
+
+  useEffect(() => {
+    const controlador = new AbortController()
+
+    async function cargarProducto() {
+      try {
+        const respuesta = await fetch(`${URL_PRODUCTOS}/${encodeURIComponent(id)}`, {
+          signal: controlador.signal,
+        })
+
+        if (controlador.signal.aborted) return
+
+        if (respuesta.status === 404) {
+          setEstado({ tipo: 'no-encontrado' })
+          return
+        }
+
+        if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`)
+
+        const producto: ProductoApi = await respuesta.json()
+        if (controlador.signal.aborted) return
+
+        if (normalizarCategoria(producto.categoria) !== normalizarCategoria(categoria)) {
+          setEstado({ tipo: 'no-encontrado' })
+          return
+        }
+
+        setEstado({ tipo: 'listo', producto })
+      } catch {
+        if (!controlador.signal.aborted) setEstado({ tipo: 'error' })
+      }
+    }
+
+    void cargarProducto()
+    return () => controlador.abort()
+  }, [categoria, id])
+
+  const producto = estado.tipo === 'listo' ? estado.producto : null
+  const imagenPrincipal = resolveAssetImage(producto?.imagenUrl?.[0]?.trim())
+
+  return (
+    <>
+      <div className="container" style={{ paddingTop: 'var(--space-lg)' }}>
+        <nav className="crumbs" aria-label="Migas de pan">
+          <ol>
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <Link to={`/listados/${encodeURIComponent(categoria)}`}> {categoria.charAt(0).toUpperCase() + categoria.slice(1)}</Link>
+            </li>
+            {producto && (
+              <li>
+                <span aria-current="page">{producto.nombre}</span>
+              </li>
+            )}
+          </ol>
+        </nav>
+      </div>
+      <div className="container main">
+        {estado.tipo === 'cargando' && <p role="status">Cargando producto...</p>}
+        {estado.tipo === 'no-encontrado' && <p role="status">Producto no encontrado.</p>}
+        {estado.tipo === 'error' && <p role="alert">No se pudo cargar el producto.</p>}
+        {producto && (
+          <div className="split--product" style={{ display: 'grid' }}>
+            <section className="gallery" aria-label="Galería de fotos">
+              <div className="gallery__main">
+                <div
+                  className="ph ph--menta"
+                  role="img"
+                  aria-label={producto.nombre}
+                  style={imagenPrincipal ? {
+                    backgroundImage: `url("${imagenPrincipal}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  } : undefined}
+                >
+                  {!imagenPrincipal && (
+                    <svg className="icon icon--32" aria-hidden="true">
+                      <use href="#i-nopic" />
+                    </svg>
+                  )}
                 </div>
-            </div>
-            <main id="producto">
+              </div>
+            </section>
+            <section className="buy" aria-labelledby="p-name">
+              {producto.novedad && (
+                <span className="badge badge--brand" style={{ alignSelf: 'flex-start' }}>Nuevo</span>
+              )}
+              <h1 className="h3" id="p-name">{producto.nombre}</h1>
+              <p className="buy__price">{formatoPrecio.format(producto.precio)}</p>
+              <div className="buy__ctas">
+                <button
+                  type="button"
+                  className="btn btn--primary grow"
+                  onClick={() =>
+                    agregar({
+                      id,
+                      nombre: producto.nombre,
+                      precio: producto.precio,
+                    })
+                  }
+                >
+                  Agregar al carrito
+                </button>
+              </div>
 
-                <div className="container">
-                    {/* Galería de Imágenes */}
-                    <div className="gallery-container">
-                        <div className="main-image img-placeholder"></div>
-                        <div className="pics">
-                            <div id="pic1" className="minipics img-placeholder"></div>
-                            <div className="minipics img-placeholder"></div>
-                            <div className="minipics img-placeholder"></div>
-                            <div className="minipics img-placeholder"></div>
-                        </div>
-                    </div>
-
-                    {/* Información del producto */}
-                    <div className="product-details">
-                        <p id="nuevo" className="texto">NUEVO</p>
-                        <h2>Vestido Lino</h2>
-                        <h2>$29.990</h2>
-                        <div className="review">
-                            <div className="rating">
-                                <i className="fa-solid fa-star estrella"></i>
-                                <i className="fa-solid fa-star estrella"></i>
-                                <i className="fa-solid fa-star estrella"></i>
-                                <i className="fa-solid fa-star estrella"></i>
-                                <i className="fa-solid fa-star estrella"></i>
-                            </div>
-                            <p>(32 reseñas) &middot;</p>
-                            <a href="#"> Ver que dicen del calce</a>
-                        </div>
-                        <div className="descripcion">
-                            <p>Vestido de lino ideal para días cálidos.</p>
-                            <p>Cómodo, fresco y versátil.</p>
-                            <hr />
-                        </div>
-                        <div className="color">
-                            <h4>Color: Beige</h4>
-                            <div className="color-swatches">
-                                <div id="beige" className="swatch"></div>
-                                <div id="grey" className="swatch"></div>
-                                <div id="black" className="swatch"></div>
-                            </div>
-                        </div>
-                        <div className="size">
-                            <h4>Selecciona tu talla: M</h4>
-                            <div className="size-options">
-                                <div className="size-btn">XS</div>
-                                <div className="size-btn">S</div>
-                                <div id="black" className="size-btn font-white">M</div>
-                                <div className="size-btn">L</div>
-                                <div id="grey" className="size-btn font-grey">XL</div>
-                                <p className="texto">XL agotada &middot;</p>
-                                <p className="texto">Quedan pocas en L</p>
-                            </div>
-                        </div>
-                        <div className="talla">
-                            <h4>¿No sabes cuál elegir? <a href="#">Consulta tu talla</a></h4>
-                            <p> Modelo: 1,68 m &middot; usa talla S</p>
-                            <p> Calce regular &middot; ¿Entre dos tallas? Te recomendamos la mayor</p>
-                        </div>
-                        <div className="actions">
-                            <button id="black" className="btn font-white">AGREGAR AL CARRITO</button>
-                            <button className="btn btn-secondary">GUARDADO EN TU LISTA</button>
-                        </div>
-                        <div className="talla info-item">
-                            <div className="info01">
-                                <h4>¿Quieres saber cuándo baje de precio?</h4>
-                                <p> Te avisamos por correo si baja</p>
-                            </div>
-                            <div className="info02">
-                                <button id="black" className="btn font-white">ACTIVAR ALERTA</button>
-                            </div>
-                        </div>
-                        <div className="extra-info">
-                            <div className="icon-item">
-                                <div className="icon-box"></div>
-                                <p>Envíos a todo Chile &middot; <a href="#"> Calcula tu envío</a>  </p>
-                            </div>
-                            <div className="icon-item">
-                                <div className="icon-box"></div>
-                                <h4>Cambio gratuito dentro de 30 días &middot; <a href="#"> Ver condiciones</a></h4>
-                            </div>
-                            <div className="icon-item">
-                                <div className="icon-box"></div>
-                                <p>Pago seguro</p>
-                            </div>
-                        </div>
-                        <div className="ultima-info">
-                            <div className="final-info">
-                                <p>Descripción  </p>
-                                <span> v</span>
-                            </div>
-                            <div className="final-info">
-                                <p>Envíos y cabios </p>
-                                <span> v</span>
-                            </div>
-                            <div className="final-info">
-                                <p>Pago seguro</p>
-                                <span> v</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </main>
-        </>
-    )
+              <ul className="buy__perks">
+                <li>
+                  <svg className="icon icon--16" aria-hidden="true">
+                    <use href="#i-refresh" />
+                  </svg>
+                  Cambio gratuito dentro de 30 días ·
+                </li>
+                <li>
+                  <svg className="icon icon--16" aria-hidden="true">
+                    <use href="#i-truck" />
+                  </svg>
+                  Envíos a todo Chile · Calcula tu envío
+                </li>
+              </ul>
+              <div>
+                <details className="accordion" open>
+                  <summary>
+                    Envíos y cambios
+                    <svg className="icon icon--20" aria-hidden="true">
+                      <use href="#i-chevron-down" />
+                    </svg>
+                  </summary>
+                  <div className="accordion__body">Envío gratis sobre $40.000. Cambios gratis dentro de 30 días.</div>
+                </details>
+                <details className="accordion">
+                  <summary>
+                    Pago seguro
+                    <svg className="icon icon--20" aria-hidden="true">
+                      <use href="#i-chevron-down" />
+                    </svg>
+                  </summary>
+                  <div className="accordion__body">Aceptamos tarjetas de crédito, débito y transferencia.</div>
+                </details>
+              </div>
+            </section>
+          </div>
+        )}
+      </div>
+    </>
+  )
 }

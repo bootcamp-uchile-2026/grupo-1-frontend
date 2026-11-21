@@ -1,0 +1,17 @@
+/* StyleNow · estilos de vista (looks.css) */
+
+/* ---------- Looks ---------- */
+.look-card { display: flex; flex-direction: column; gap: var(--space-sm); text-decoration: none; position: relative; }
+.look-card__media { position: relative; }
+.look-card__media .badge { position: absolute; top: var(--space-sm); left: var(--space-sm); }
+.look-card__media .icon-btn { position: absolute; top: var(--space-xs); right: var(--space-xs); }
+.look-card__thumbs { display: flex; gap: var(--space-xs); }
+.look-card__thumbs .ph { width: 48px; aspect-ratio: 1; border-radius: var(--radius-md); }
+.look-card h3 { font-family: var(--font-primary); font-size: var(--h5-size); line-height: var(--h5-lh); font-weight: var(--weight-semibold); }
+.look-buy { display: flex; flex-direction: column; gap: var(--space-base); }
+.look-item { display: grid; grid-template-columns: 24px 64px 1fr; gap: var(--space-sm); align-items: start; padding-block: var(--space-sm); }
+.look-item__n { width: 20px; height: 20px; border-radius: 50%; background: var(--action-primary); color: var(--text-on-primary); font-size: var(--caption1-size); font-weight: var(--weight-bold); display: grid; place-items: center; margin-top: var(--space-xs2); }
+.look-item .ph { aspect-ratio: 64 / 80; border-radius: var(--radius-md); }
+.look-item__body { display: flex; flex-direction: column; gap: var(--space-xs); align-items: flex-start; }
+.look-stage { position: relative; }
+.look-stage .ph { aspect-ratio: 620 / 760; border-radius: var(--radius-xl); }

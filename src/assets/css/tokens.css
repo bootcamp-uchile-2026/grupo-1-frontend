@@ -1,0 +1,214 @@
+/* ==========================================================================
+   StyleNow · Design Tokens
+   Fuente: Figma "Entregable Cátedra N°3 · StyleNow" > 00 · UI Kit · Fundamentos
+   Capas: 1) Primitivos (Foundation)  2) Semánticos (alias)  3) Tipografía / espaciado / radio
+   ========================================================================== */
+
+:root {
+  /* ---------- 1. Primitivos · Color ---------- */
+  /* Primary */
+  --primary-50:  #efe6fd;
+  --primary-100: #ceb0fa;
+  --primary-200: #b78af7;
+  --primary-300: #9654f4;
+  --primary-400: #8133f1;
+  --primary-500: #6200ee;
+  --primary-600: #5900d9;
+  --primary-700: #4600a9;
+  --primary-800: #360083;
+  --primary-900: #290064;
+
+  /* Secondary */
+  --secondary-50:  #f6f3ff;
+  --secondary-100: #e4dbfd;
+  --secondary-200: #d7cafd;
+  --secondary-300: #c4b1fc;
+  --secondary-400: #b9a2fb;
+  --secondary-500: #a78bfa;
+  --secondary-600: #987ee4;
+  --secondary-700: #7763b2;
+  --secondary-800: #5c4c8a;
+  --secondary-900: #463a69;
+
+  /* Accent (coral) */
+  --accent-50:  #fff0f0;
+  --accent-100: #ffd1d1;
+  --accent-200: #ffbbbb;
+  --accent-300: #ff9c9c;
+  --accent-400: #ff8989;
+  --accent-500: #ff6b6b;
+  --accent-600: #e86161;
+  --accent-700: #b54c4c;
+  --accent-800: #8c3b3b;
+  --accent-900: #6b2d2d;
+
+  /* Success (menta) */
+  --success-50:  #f1fbfa;
+  --success-100: #d3f2ee;
+  --success-200: #bdece6;
+  --success-300: #9fe4db;
+  --success-400: #8dded4;
+  --success-500: #70d6c9;
+  --success-600: #66c3b7;
+  --success-700: #50988f;
+  --success-800: #3e766f;
+  --success-900: #2f5a54;
+
+  /* Warning */
+  --warning-50:  #fffaf0;
+  --warning-100: #fff1d0;
+  --warning-200: #ffeab9;
+  --warning-300: #ffe098;
+  --warning-400: #ffda85;
+  --warning-500: #ffd166;
+  --warning-600: #e8be5d;
+  --warning-700: #b59448;
+  --warning-800: #8c7338;
+  --warning-900: #6b582b;
+
+  /* Neutral */
+  --neutral-50:  #e8e8e8;
+  --neutral-100: #b7b7b9;
+  --neutral-200: #949497;
+  --neutral-300: #636368;
+  --neutral-400: #45454a;
+  --neutral-500: #16161d;
+  --neutral-600: #14141a;
+  --neutral-700: #101015;
+  --neutral-800: #0c0c10;
+  --neutral-900: #09090c;
+
+  --base-white: #ffffff;
+  --highlight-500: #34c38a; /* verde CTA del hero */
+
+  /* Media (fondos de foto / categoría) */
+  --media-lavanda:  #e4dbfd;
+  --media-coral:    #ffd1d1;
+  --media-menta:    #d3f2ee;
+  --media-amarillo: #fff1d0;
+
+  /* ---------- 2. Semánticos ---------- */
+  --text-primary:        var(--neutral-500);
+  --text-secondary:      var(--neutral-300);
+  --text-disabled:       var(--neutral-200);
+  --text-on-primary:     var(--base-white);
+  --text-on-highlight:   var(--primary-900);
+  --text-link:           var(--primary-500);
+  --text-link-pressed:   var(--primary-600);
+  --text-sale:           var(--accent-700);
+  --text-error:          var(--accent-700);
+  --text-success:        var(--success-800);
+  --text-warning:        var(--warning-900);
+  --text-inverse:            var(--base-white);
+  --text-inverse-secondary:  var(--secondary-200);
+
+  --icon-primary:    var(--neutral-500);
+  --icon-secondary:  var(--neutral-300);
+  --icon-brand:      var(--primary-500);
+  --icon-on-primary: var(--base-white);
+  --icon-inverse:    var(--base-white);
+
+  --surface-page:          var(--base-white);
+  --surface-subtle:        var(--secondary-50);
+  --surface-secondary:     var(--secondary-50);
+  --surface-success:       var(--success-50);
+  --surface-error:         var(--accent-50);
+  --surface-warning:       var(--warning-50);
+  --surface-inverse:       var(--primary-900);
+  --surface-inverse-raised:var(--primary-800);
+  --surface-disabled:      var(--neutral-100);
+
+  --border-default: var(--neutral-100);
+  --border-input:   var(--neutral-300);
+  --border-focus:   var(--primary-500);
+  --border-subtle:  var(--secondary-200);
+  --border-inverse: var(--primary-700);
+  --border-error:   var(--accent-600);
+  --border-success: var(--success-700);
+
+  --action-primary:         var(--primary-500);
+  --action-primary-hover:   var(--primary-600);
+  --action-primary-pressed: var(--primary-700);
+  --action-highlight:       var(--highlight-500);
+  --action-disabled:        var(--neutral-100);
+
+  /* ---------- 3. Espaciado (size) ---------- */
+  --space-zero: 0;
+  --space-xxs: 2px;
+  --space-xs2: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-base:16px;
+  --space-md:  20px;
+  --space-lg:  24px;
+  --space-xl2: 32px;
+  --space-xl3: 40px;
+  --space-xl4: 48px;
+  --space-xl5: 60px;
+  --space-xl6: 72px;
+
+  /* ---------- 4. Radio ---------- */
+  --radius-none: 0;
+  --radius-sm:  2px;
+  --radius-md:  4px;
+  --radius-lg:  8px;
+  --radius-xl:  12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-5xl: 48px;
+  --radius-full: 999px;
+
+  /* ---------- 5. Elevación ---------- */
+  --shadow-sm: 0 1px 2px rgba(9, 9, 12, .08);
+  --shadow-md: 0 4px 12px rgba(9, 9, 12, .16);
+  --shadow-lg: 0 16px 40px rgba(9, 9, 12, .22);
+
+  /* ---------- 6. Tipografía ---------- */
+  --font-primary:   "Playfair", "Playfair Display", Georgia, serif; /* solo títulos grandes */
+  --font-secondary: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-logo:      "Poppins", var(--font-secondary);
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* Heading · H1-H5 Playfair, H6 Inter */
+  --h1-size: 64px; --h1-lh: 72px; --h1-ls: -1px;
+  --h2-size: 48px; --h2-lh: 56px; --h2-ls: -0.5px;
+  --h3-size: 40px; --h3-lh: 48px; --h3-ls: -0.3px;
+  --h4-size: 32px; --h4-lh: 40px; --h4-ls: -0.2px;
+  --h5-size: 24px; --h5-lh: 30px; --h5-ls: -0.15px;
+  --h6-size: 20px; --h6-lh: 24px; --h6-ls: 0;
+
+  /* Body */
+  --body1-size: 18px; --body1-lh: 28px;
+  --body2-size: 16px; --body2-lh: 24px;
+  --body3-size: 14px; --body3-lh: 20px;
+  --body4-size: 12px; --body4-lh: 16px;
+
+  /* Label */
+  --label1-size: 16px; --label1-lh: 22px; --label1-ls: -0.18px;
+  --label2-size: 14px; --label2-lh: 20px; --label2-ls: -0.16px;
+  --label3-size: 12px; --label3-lh: 16px; --label3-ls: -0.12px;
+
+  /* Caption */
+  --caption1-size: 10px; --caption1-lh: 12px;
+
+  /* ---------- 7. Layout ---------- */
+  --container-max: 1296px;   /* 1440 - 2 × 72 */
+  --gutter-desktop: var(--space-xl6);
+  --gutter-mobile:  var(--space-base);
+  --focus-ring: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--border-focus);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --h1-size: 40px; --h1-lh: 48px;
+    --h2-size: 32px; --h2-lh: 40px;
+    --h3-size: 24px; --h3-lh: 30px;
+    --h4-size: 22px; --h4-lh: 28px;
+    --h5-size: 20px; --h5-lh: 24px;
+  }
+}

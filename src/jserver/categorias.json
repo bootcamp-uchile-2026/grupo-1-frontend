@@ -1,0 +1,31 @@
+{ "categorias" : [
+  {
+    "id": 1,
+    "nombre": "Mujer",
+    "slug": "mujer",
+    "imagenUrl": "src/assets/img/categorias/cat-main-mujer.webp",
+    "destacada": true
+  },
+  {
+    "id": 2,
+    "nombre": "Hombre",
+    "slug": "hombre",
+    "imagenUrl": "src/assets/img/categorias/cat-main-hombre.webp",
+    "destacada": true
+  },
+  {
+    "id": 3,
+    "nombre": "Accesorios",
+    "slug": "accesorios",
+    "imagenUrl": "src/assets/img/categorias/cat-main-accesorios.webp",
+    "destacada": true
+  },
+  {
+    "id": 4,
+    "nombre": "Calzado",
+    "slug": "calzado",
+    "imagenUrl": "src/assets/img/categorias/cat-main-calzado.webp",
+    "destacada": false
+  }
+]
+}
