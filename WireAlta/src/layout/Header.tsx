@@ -1,9 +1,6 @@
 import { NavLink } from "react-router";
 import { useCarritoStore } from '../store/useCarritoStore'
-
-interface HeaderSesionProps {
-  sesion?: boolean
-}
+import { useAuthStore } from '../store/useAuthStore';
 
 export function CarritoIcono() {
   const cantidadProductos = useCarritoStore((estado) =>
@@ -21,8 +18,27 @@ export function CarritoIcono() {
   )
 }
 
-/** Cabecera del sitio (ver pantallas 01, 02, 15, 15b y 15c del mockup). */
-export function Header({ sesion = false }: HeaderSesionProps) {
+export function LogginStatus() {
+  const logged = useAuthStore((state) => state.logged);
+  const setLogged = useAuthStore((state) => state.setLogged);
+
+  if (!logged) return (
+  <a className="site-header__account" href="/login" aria-label="Ingresar / Registrarme">
+    <svg className="icon" aria-hidden="true">
+      <use href="#i-account" />
+    </svg>
+    <span>Ingresar / Registrarme</span>
+  </a>
+  );
+
+  return (
+    <button className="btn btn--primary btn--block" type="button" onClick={() => setLogged(false)}>
+      Cerrar sesión
+    </button>
+  );
+}
+
+export function Header() {
 
   return (<>
     <header className="site-header">
@@ -58,27 +74,10 @@ export function Header({ sesion = false }: HeaderSesionProps) {
           <label className="sr-only" htmlFor="q">
             Buscar
           </label>
-          <input id="q" type="search" name="q" placeholder="Buscar productos, marcas y más" disabled/>
+          <input id="q" type="search" name="q" placeholder="Buscar productos, marcas y más" disabled />
         </form>
-        {sesion ? (
-          <a className="site-header__account" href="#/mis-compras" aria-label="Mi cuenta">
-            <svg className="icon" aria-hidden="true">
-              <use href="#i-account" />
-            </svg>
-            <span>Mi cuenta</span>
-          </a>
-        ) : (
-          <a
-            className="site-header__account"
-            href="/login"
-            aria-label="Ingresar / Registrarme"
-          >
-            <svg className="icon" aria-hidden="true">
-              <use href="#i-account" />
-            </svg>
-            <span>Ingresar / Registrarme</span>
-          </a>
-        )}
+        
+        <LogginStatus/>
 
         <a className="icon-btn" href="/carrito" aria-label="Carrito">
           <svg className="icon" aria-hidden="true">
@@ -92,7 +91,7 @@ export function Header({ sesion = false }: HeaderSesionProps) {
 
       <nav className="site-nav" aria-label="Principal">
         <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/" >
-         Inicio
+          Inicio
         </NavLink>
         <NavLink className={({ isActive }) => isActive ? "chapter-link NavActive" : "chapter-link"} to="/listados/Mujer" >
           Mujer
