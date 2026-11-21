@@ -42,140 +42,76 @@ Cabe destacar que Frontend, Mobile y Backend poseen repositorios Git independien
 
 3.3 Feature: Se utilizan para implementar nuevas funcionalidades. Cada rama debe representar una funcionalidad concreta, preferentemente relacionada con una Historia de Usuario o tarea del Backlog. 
    Formato: feature/<HU>-<descripcion>
-   
-## Instalación/Ejecución
-Para poder probar la aplicación web, es necesario:
-* Clonar este repositorio
-* Abrir en Visual Studio Code
-* Abrir terminal WSL
-* Escribir `pnpm run dev`
-Y luego, en el navegador se abrirá el proyecto de manera local.
 
-## Desarrollo: 
-Arquitectura de Vistas (Navegación)
+# StyleNow | Frontend
 
-El desarrollo frontend se basa en la investigación y wireframes del equipo de UX/UI. En este primer hito se construyeron las vistas HTML de baja fidelidad que son las  siguientes: 
+Tienda web de moda y accesorios desarrollada por el equipo Frontend del Grupo 1 del Bootcamp DCC 2026. La rama `develop` permite recorrer una compra de demostración: explorar el catálogo, abrir un producto, agregarlo al carrito y completar el checkout.
 
-**Inicio** :Pantalla principal con banners de colección, secciones de inspiración y accesos a categorías. 
+## Inicio rápido
 
-**detalle-producto** : Página de detalle del producto (variantes de talla/color, stock, guía de tallas y botón de compra). 
+**Requisitos:** Git, Node.js **22.22.0 o superior** y pnpm. Usa pnpm para instalar las dependencias: `pnpm-lock.yaml` coincide con `package.json`, mientras que `package-lock.json` está desactualizado. No necesitas configurar un archivo `.env`.
 
-**Comunidad** : Galería inspiracional tipo *Lookbook* para ver prendas combinadas y aumentar la venta cruzada. 
-
-**Producto** : Página base para la carga de productos. En este momento solo con contenido mock.
-
-**Login** :  Formulario para ingreso de usuarios bajo validación zod. 
-
-```
-grupo-1-frontend/
-├── css/
-├── node_modules/
-├── public/
-│   ├── favicon.svg
-│   └── icons.svg
-├── src/
-│   ├── assets/
-│   │   ├── css/
-│   │   │   ├── views/
-│   │   │   ├── base.css
-│   │   │   ├── header-footer.css
-│   │   │   └── home.css
-│   │   ├── img/
-│   │   ├── react.svg
-│   │   ├── users.json
-│   │   └── vite.svg
-│   ├── layout/
-│   │   ├── Body.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Header.tsx
-│   │   ├── MainLayout.tsx
-│   │   └── Sidebar.tsx
-│   ├── pages/
-│   │   ├── subcomponents/
-│   │   │   ├── CategoriasPopulares.tsx
-│   │   │   ├── HomeInfoBar.tsx
-│   │   │   └── ProductsForYou.tsx
-│   │   ├── Cambios_y_Devoluciones.tsx
-│   │   ├── Carrito.tsx
-│   │   ├── Catalogo.tsx
-│   │   ├── Comunidad.tsx
-│   │   ├── Inicio.tsx
-│   │   ├── Login.tsx
-│   │   ├── ohoh.tsx
-│   │   └── Producto.tsx
-│   ├── App.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── test.tsx
-├── vanillaHtml/
-├── .gitignore
-├── .oxlintrc.json
-├── index.html
-├── LICENSE
-├── package-lock.json
-├── package.json
-├── pnpm-lock.yaml
-├── README.md
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
-
+```bash
+git clone --branch develop [https://github.com/bootcamp-uchile-2026/grupo-1-frontend.git](https://github.com/bootcamp-uchile-2026/grupo-1-frontend.git)
+cd grupo-1-frontend
+pnpm install --frozen-lockfile
 ```
 
-## Componentes reutilizables: 
-En el hito número 2, se ha transformado el proyecto a React, permitiendo reutilizar virtualmente cualquiera de los componentes que forman el sitio. Los elementos que buscan ser reutilizados están bajo la sub carpeta "subcomponents"
+Desde la raíz del repositorio, ejecuta cada comando en una terminal distinta y deja los tres procesos activos:
 
-* **CategoriasPopulares :** Componente que carga la imagen y el título de la categoría desde una api rest. Pide como propm un id.
-* **HomeInfoBar :** Carga mensajes destacados en el home. Solicita un promp para el encabezado y otro para el paragraph de contenido.
-* **ProductsForYou :** Carga una imagen a un producto destacado en base al tipo de usuario que visita el sitio.
+| Terminal | Comando | URL |
+| --- | --- | --- |
+| 1 | `pnpm jCategorias` | [API de categorías](http://localhost:3005/categorias) |
+| 2 | `pnpm jProductos` | [API de productos](http://localhost:3006/productos) |
+| 3 | `pnpm dev` | [Tienda en Vite](http://localhost:5173) |
 
-Cabe destacar que ambos componentes son llamados de forma dinámica desde sus respectivos archivos hacia las distintas vistas HTML para evitar la duplicación de código en la maquetación.
+Abre la URL que indique Vite si el puerto `5173` está ocupado. Si el catálogo aparece vacío, comprueba que ambos endpoints respondan en los puertos `3005` y `3006`: el frontend usa esas direcciones directamente en [`FetchCatalogo.tsx`](src/components/FetchCatalogo.tsx) y [`Producto.tsx`](src/pages/Producto.tsx).
 
-## Tecnologías Utilizadas en el proceso:
-* **HTML5:** Estructura semántica de las vistas.
-* **CSS3:** Estilos visuales.
-* **Pnpm/npm: ** Librería de componentes
-* **Vite:** Empaquetador de proyecto
-* **TS:** Llama a los componentes del sitio en las distintas vistas.
-* **Figma:** Wireframes y prototipos UX/UI de referencia.
-* **Git/GitHub:** Control de versiones y trabajo colaborativo.
+## Cómo probar la tienda
 
-# React + TypeScript + Vite
+1. En Inicio, abre la categoría **Hombre** y selecciona **Camisa oxford** (`/listados/hombre/2`).
+2. Agrega la camisa al carrito. En `/carrito`, modifica la cantidad y recarga la página para comprobar que el carrito persiste en el navegador.
+3. En `/finalizarCompra`, completa los datos de prueba, selecciona una comuna y elige un método de pago. El código postal es opcional. Al enviar el formulario válido, aparece una confirmación y se vacía el carrito.
+4. Para probar el inicio de sesión por separado, usa una cuenta de demostración de [`users.json`](src/jserver/users.json) en `/login`. La comparación ocurre en el navegador y no requiere un servidor de usuarios.
 
-Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR (reemplazo de módulos en caliente) y algunas reglas de Oxlint.
+El catálogo se sirve con JSON Server a partir de [categorías](src/jserver/categorias.json) y [productos](src/jserver/productos.json) de prueba. El login no implementa autenticación real y el checkout no realiza cobros ni envía pedidos a un backend. No uses datos personales ni credenciales reales.
 
-Actualmente, hay dos complementos (plugins) oficiales disponibles:
+## Rutas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Ruta | Vista |
+| --- | --- |
+| `/` | Inicio con banners y accesos a categorías |
+| `/listados/Mujer`, `/listados/Hombre`, `/listados/Accesorios`, `/listados/Calzado`, `/listados/Ofertas` | Listados filtrados por categoría u oferta |
+| `/listados/:categoria/:id` | Ficha de producto; el detalle se consulta por ID |
+| `/carrito` | Carrito, cantidades y eliminación de productos |
+| `/finalizarCompra` | Checkout simulado con validación de formulario |
+| `/login` | Inicio de sesión de demostración |
+| `/ayudaCambios` | Ayuda sobre cambios y devoluciones |
 
-## Compilador de React (React Compiler)
+Las rutas se definen en [`src/App.tsx`](src/App.tsx). `/listados` renderiza Inicio y las rutas no reconocidas muestran una página de error.
 
-El compilador de React no está habilitado en esta plantilla debido a su impacto en el rendimiento de desarrollo y compilación. Para agregarlo, consulta esta documentación [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías y estructura
 
-## Ampliando la configuración de Oxlint
+El frontend usa React y TypeScript, Vite para desarrollo y compilación, y React Router para navegación. Zustand maneja el estado del carrito y del login; solo el carrito se persiste en `localStorage`. Zod valida los formularios y Oxlint analiza el código.
 
-Si estás desarrollando una aplicación de producción, recomendamos habilitar las reglas de linter conscientes de tipos instalando `oxlint-tsgolint` and editing `.oxlintrc.json`:
+| Ruta | Contenido |
+| --- | --- |
+| [`src/pages/`](src/pages/) | Vistas de la tienda |
+| [`src/layout/`](src/layout/) | Estructura compartida, encabezado y pie de página |
+| [`src/components/`](src/components/) | Componentes reutilizables y hook del catálogo |
+| [`src/store/`](src/store/) | Estado del carrito y del login |
+| [`src/jserver/`](src/jserver/) | Datos de prueba y resolución de imágenes del catálogo |
+| [`src/assets/`](src/assets/) · [`public/`](public/) | Estilos, imágenes y recursos públicos |
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## Comandos de desarrollo
 
-Consulta la [documentación de reglas de Oxlint](https://oxc.rs/docs/guide/usage/linter/rules) para ver la lista completa de reglas y categorías.
+| Comando | Uso |
+| --- | --- |
+| `pnpm dev` | Inicia el servidor de desarrollo de Vite. |
+| `pnpm jCategorias` | Sirve las categorías de prueba en el puerto `3005`. |
+| `pnpm jProductos` | Sirve los productos de prueba en el puerto `3006`. |
+| `pnpm lint` | Analiza el código con Oxlint. |
+| `pnpm build` | Ejecuta TypeScript y genera el build en `dist/`. |
+| `pnpm preview` | Sirve el build localmente después de compilar. Para ver el catálogo, mantén activas las dos API de prueba. |
 
-## Cargar el proyecto
-
-Para ver el proyecto, descarga 
-
-
+El script `jServer` apunta a `src/assets/users.json`, una ruta que ya no existe. No es necesario ejecutarlo: el formulario de login importa su archivo de prueba directamente desde `src/jserver/`.
