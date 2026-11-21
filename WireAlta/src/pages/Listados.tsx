@@ -1,5 +1,6 @@
 import { useFetchCatalogo } from '../components/FetchCatalogo'
 import { Link } from 'react-router'
+import { resolveAssetImage } from '../jserver/resolveAssetImage';
 
 import '../assets/css/views/listado.css'
 
@@ -127,7 +128,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                           <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
                             <img
                               className="ratio-product"
-                              src={producto.imagenUrl[0]}
+                              src={resolveAssetImage(producto.imagenUrl[0])}
                               alt={`${producto.nombre}, foto de producto`}
                               loading="lazy"
                             />
@@ -168,7 +169,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                         <Link to={`/listados/${encodeURIComponent(categoria.trim().toLowerCase())}/${producto.id}`}>
                           <img
                             className="ratio-product"
-                            src={producto.imagenUrl[0]}
+                            src={resolveAssetImage(producto.imagenUrl[0])}
                             alt={`${producto.nombre}, foto de producto`}
                             loading="lazy"
                           />
