@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { useCarritoStore } from '../store/useCarritoStore'
+import { resolveAssetImage } from '../jserver/resolveAssetImage';
 
 import '../assets/css/views/producto.css'
 
@@ -73,7 +74,7 @@ function ProductoDetalle({ categoria, id }: { categoria: string; id: string }) {
   }, [categoria, id])
 
   const producto = estado.tipo === 'listo' ? estado.producto : null
-  const imagenPrincipal = producto?.imagenUrl?.[0]?.trim()
+  const imagenPrincipal = resolveAssetImage(producto?.imagenUrl?.[0]?.trim())
 
   return (
     <>
