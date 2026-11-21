@@ -11,9 +11,6 @@ export function AyudaCambios() {
               <li>
                 <a href="/">Inicio</a>
               </li>
-              {/*<li>
-                <a href="#">Ayuda</a>
-              </li>*/}
               <li>
                 <span aria-current="page">Cambios y devoluciones</span>
               </li>

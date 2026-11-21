@@ -44,72 +44,7 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
         </div>
       </div>
       <div className="container main">
-        <div className="split--filters--" style={{ display: 'grid' }}>
-          {/* <aside aria-label="Filtros" className="hide-m">
-            
-            <div className="filter-group">
-              <h3>Categoría</h3>
-              <label className="check">
-                <input type="checkbox" name="c" checked />
-                Casual
-              </label>
-              <label className="check">
-                <input type="checkbox" name="c" />
-                Fiesta
-              </label>
-              <label className="check">
-                <input type="checkbox" name="c" checked />
-                Oficina
-              </label>
-              <label className="check">
-                <input type="checkbox" name="c" />
-                Playa
-              </label>
-            </div>
-            <div className="filter-group">
-              <h3>Talla</h3>
-              <div className="sizes" role="group" aria-label="Talla">
-                <button type="button" className="size" aria-pressed="false">XS</button>
-                <button type="button" className="size" aria-pressed="false">S</button>
-                <button type="button" className="size" aria-pressed="true">M</button>
-                <button type="button" className="size" aria-pressed="false">L</button>
-                <button type="button" className="size" aria-disabled="true" aria-label="XL, agotada">XL</button>
-              </div>
-            </div>
-            <div className="filter-group">
-              <h3>Color</h3>
-              <label className="check">
-                <input type="checkbox" />
-                <span className="swatch swatch--sm" style={{ '--sw': 'var(--warning-100)' } as CSSProperties} />
-                Beige
-              </label>
-              <label className="check">
-                <input type="checkbox" />
-                <span className="swatch swatch--sm" style={{ '--sw': 'var(--neutral-500)' } as CSSProperties} />
-                Negro
-              </label>
-              <label className="check">
-                <input type="checkbox" />
-                <span className="swatch swatch--sm" style={{ '--sw': 'var(--secondary-400)' } as CSSProperties} />
-                Lila
-              </label>
-            </div>
-            <div className="filter-group">
-              <h3>Precio</h3>
-              <label className="check">
-                <input type="checkbox" name="c" />
-                Hasta $20.000
-              </label>
-              <label className="check">
-                <input type="checkbox" name="c" checked />
-                $20.000 - $40.000
-              </label>
-              <label className="check">
-                <input type="checkbox" name="c" />
-                Más de $40.000
-              </label>
-            </div>
-          </aside>*/}
+        <div className="split--filters--" style={{ display: 'grid' }}> 
           <section aria-label="Productos">
             <ul className="grid grid-3">
               {cargando && <li>Cargando productos...</li>}
@@ -140,11 +75,6 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                             </svg>
                           </div>
                         )}
-                        {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
-                        <svg className="icon icon--20" aria-hidden="true">
-                          <use href="#i-heart" />
-                        </svg>
-                      </button> */}
                       </div>
                       <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
                         {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
@@ -181,11 +111,6 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                           </svg>
                         </div>
                       )}
-                      {/* <button type="button" className="icon-btn icon-btn--white product-card__fav" aria-pressed="false" aria-label={`Agregar ${producto.nombre} a favoritos`}>
-                        <svg className="icon icon--20" aria-hidden="true">
-                          <use href="#i-heart" />
-                        </svg>
-                      </button> */}
                     </div>
                     <div className="stack" style={{ gap: 'var(--space-xxs)' }}>
                       {/*<a className="product-card__name" href={`${categoria.toLowerCase()}/producto/${producto.id}`}>{producto.nombre}</a>*/}
@@ -199,11 +124,9 @@ export function Listado({ categoria }: CategoriaBuscadaProp) {
                   </article>
                 </li>
               ))}
-
             </ul>
           </section>
         </div>
-
       </div>
     </>
   )
